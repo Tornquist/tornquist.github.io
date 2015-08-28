@@ -1,0 +1,36 @@
+// ActionScript file
+package
+{
+	import flash.display.Loader;
+	import flash.display.Sprite;
+	import flash.events.*;
+	import flash.net.URLRequest;
+
+	import mx.controls.Alert;
+
+	public class SpriteWithBitmap extends Sprite
+	{
+		//Pass the source path or url here.
+		private var url:String = "http://shardulbartwal.files.wordpress.com/2009/09/ssbrose.jpg";
+
+		public function SpriteWithBitmap(imageLocation)
+		{
+			url = imageLocation;
+			loadImg();
+		}
+		private function loadImg():void
+		{
+			var loader:Loader = new Loader();
+			loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, loadFailure);
+			var request:URLRequest = new URLRequest(url);
+			loader.load(request);
+			this.addChild(loader);
+		}
+
+		private function loadFailure(event:IOErrorEvent):void
+		{
+			Alert.show("Can't load :" + url);
+		}
+	}
+
+}
