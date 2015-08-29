@@ -2,7 +2,7 @@
 layout: post
 title: "Objective-C - Image System"
 date: 2011-01-17 11:28:00
-categories: thought
+categories: code
 ---
 I have decided that I do not want to rely on a game library for my first major Obj-C game.  I may in the future, but I do not want to get into the situation where I know a single library, not a language.  There are a few ways that I could code my graphics system. The first is with UIImageViews and UIViews.  I could have  a separate view for each image and then manipulate the views. That would work, but I prefer to code with a canvas where each time the game loops every item is drawn the the screen with a back and front buffer system.  This morning I simulated that with Objective-C.
 
