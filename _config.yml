@@ -1,6 +1,7 @@
 # Site settings
 title: Nathan Tornquist.com
 name: Nathan Tornquist
+author: Nathan Tornquist
 email: nathan.tornquist@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -14,6 +15,9 @@ permalink: /blog/:year/:month/:title/
 
 # Build settings
 markdown: kramdown
+
+welcome_small: Hi, I'm Nathan Tornquist
+welcome_big: I'm a Software Developer
 
 collections:
 - contact_links

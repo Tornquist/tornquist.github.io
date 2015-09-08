@@ -1,0 +1,5 @@
+{% if page.custom_tail_js %}
+  {% for js_file in page.custom_tail_js %}
+  <script src='/assets/scripts/{{ js_file }}.js' type="text/javascript"></script>
+  {% endfor %}
+{% endif %}
