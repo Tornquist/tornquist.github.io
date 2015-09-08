@@ -1,23 +1,39 @@
 ---
-layout: default
+layout: blank
+custom_css:
+- simplegrid
+- img-properties
+- font-awesome
+- horizontal-nav
 ---
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+  <div class="grid">
+    <div class="col-1-1">
+      <div class="img-wrapper">
+        <img class="img-circle img-emphasis img-space img-center" src="/assets/site_images/nathan_small.png">
+      </div>
+    </div>
+    <div class="col-1-1" style="text-align: center">
+      <h1 class="page-heading">{{ site.name }}</h1>
+      <div class="horizontal-nav">
+        <ul>
+          {% for page in site.pages %}
+            {% if page.title %}
+              <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="horizontal-nav">
+        <ul>
+          {% for link in site.contact_links %}
+            <li><a href="{{ link.remote_url }}" title="{{ link.title }}"><i class="fa fa-{{ link.fa_icon }}"></i></a></li>
+          {% endfor %}
+          <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>

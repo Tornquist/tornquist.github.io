@@ -1,0 +1,8 @@
+.horizontal-nav ul { margin-left: 0px }
+.horizontal-nav ul li { list-style: none; display: inline; }
+.horizontal-nav ul li:after { content: " \00b7"; }
+.horizontal-nav ul li:last-child:after { content: none; }
+.horizontal-nav a:link    { color: black }
+.horizontal-nav a:visited { color: black }
+.horizontal-nav a:hover   { color: #0066CC; text-decoration: none}
+.horizontal-nav a:active  { color: black }
