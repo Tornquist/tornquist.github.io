@@ -25,6 +25,10 @@ welcome_big: I'm an Engineer
 welcome_image: nathan_small.png
 welcome_button_text: Learn About Me
 
+contact_heading: Contact Me
+contact_subheading: I'd love to hear from you
+
+copyright: Copyright &copy; Nathan Tornquist 2010-2015
 
 collections:
 - milestones
