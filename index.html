@@ -1,5 +1,7 @@
 ---
 layout: blank
+custom_css:
+- img-properties
 custom_tail_js:
 - jquery
 - bootstrap
@@ -45,9 +47,12 @@ custom_tail_js:
     <header>
         <div class="container">
             <div class="intro-text">
+              <div class="img-wrapper">
+                <img class="img-circle img-emphasis img-space img-center" src="/assets/images/{{ site.welcome_image }}">
+              </div>
               <div class="intro-lead-in">{{ site.welcome_small }}</div>
               <div class="intro-heading">{{ site.welcome_big }}</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+              <a href="#services" class="page-scroll btn btn-xl">{{ site.welcome_button_text }}</a>
             </div>
         </div>
     </header>

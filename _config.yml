@@ -16,12 +16,15 @@ permalink: /blog/:year/:month/:title/
 # Build settings
 markdown: kramdown
 
-welcome_small: Hi, I'm Nathan Tornquist
-welcome_big: I'm a Software Developer
-
-# Headings
+# Site Variables
 milestones_heading: Professional Milestones
 milestones_subheading: A Brief History of Where I've Been
+
+welcome_small: Hi, I'm Nathan Tornquist
+welcome_big: I'm an Engineer
+welcome_image: nathan_small.png
+welcome_button_text: Learn About Me
+
 
 collections:
 - milestones
