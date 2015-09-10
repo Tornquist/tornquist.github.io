@@ -335,6 +335,14 @@ header .intro-title .intro-heading {
     line-height: 50px;
 }
 
+header .intro-title .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 22px;
+}
+
 @media(min-width:768px) {
     header .intro-text {
         padding-top: 150px;
@@ -365,6 +373,14 @@ header .intro-title .intro-heading {
         font-size: 75px;
         font-weight: 700;
         line-height: 75px;
+    }
+
+    header .intro-title .intro-lead-in {
+        margin-bottom: 25px;
+        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
     }
 }
 
