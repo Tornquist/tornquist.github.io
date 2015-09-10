@@ -2,5 +2,4 @@
   {% for link in site.contact_links %}
     <li><a href="{{ link.remote_url }}" title="{{ link.title }}"><i class="fa fa-{{ link.fa_icon }}"></i></a></li>
   {% endfor %}
-  <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i></a></li>
 </ul>
