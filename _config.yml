@@ -1,6 +1,7 @@
 # Site settings
 title: Nathan Tornquist.com
 name: Nathan Tornquist
+author: Nathan Tornquist
 email: nathan.tornquist@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -15,5 +16,26 @@ permalink: /blog/:year/:month/:title/
 # Build settings
 markdown: kramdown
 
+# Site Variables
+home_title: About Me
+
+milestones_heading: Professional Milestones
+milestones_subheading: A Brief History of Where I've Been
+
+welcome_small: Hi, I'm Nathan Tornquist
+welcome_big: I'm an Engineer
+welcome_image: nathan_small.png
+welcome_button_text: Learn About Me
+
+contact_heading: Contact Me
+contact_subheading: I'd love to hear from you
+
+biography_heading: Who I Am
+biography_subheading: I'd like to tell you about myself.
+
+copyright: Copyright &copy; Nathan Tornquist 2010-2015
+
 collections:
+- biographies
+- milestones
 - contact_links

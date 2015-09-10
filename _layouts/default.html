@@ -3,18 +3,28 @@
 
   {% include head.html %}
 
-  <body>
-
+  <body id="page-top" class="index">
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
+    <header>
+        <div class="container">
+            <div class="intro-title">
+              <div class="intro-heading">{{ page.title }}</div>
+              {% if page.date %}
+                <div class="intro-lead-in">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</div>
+              {% endif %}
+            </div>
+        </div>
+    </header>
+    <section class="small-padding">
+      <div class="container">
         {{ content }}
       </div>
-    </div>
+    </section>
 
     {% include footer.html %}
-
   </body>
+
+  {% include tail_js.html %}
 
 </html>

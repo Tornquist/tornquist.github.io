@@ -1,39 +1,10 @@
 ---
 layout: blank
 custom_css:
-- simplegrid
 - img-properties
-- font-awesome
-- horizontal-nav
 ---
 
-<div class="home">
-
-
-  <div class="grid">
-    <div class="col-1-1">
-      <div class="img-wrapper">
-        <img class="img-circle img-emphasis img-space img-center" src="/assets/site_images/nathan_small.png">
-      </div>
-    </div>
-    <div class="col-1-1" style="text-align: center">
-      <h1 class="page-heading">{{ site.name }}</h1>
-      <div class="horizontal-nav">
-        <ul>
-          {% for page in site.pages %}
-            {% if page.title %}
-              <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="horizontal-nav">
-        <ul>
-          {% for link in site.contact_links %}
-            <li><a href="{{ link.remote_url }}" title="{{ link.title }}"><i class="fa fa-{{ link.fa_icon }}"></i></a></li>
-          {% endfor %}
-          <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+{% include homepage_segments/banner.html %}
+{% include homepage_segments/biography.html %}
+{% include homepage_segments/milestones.html %}
+{% include homepage_segments/contact.html %}

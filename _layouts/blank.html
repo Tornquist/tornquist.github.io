@@ -3,14 +3,12 @@
 
   {% include head.html %}
 
-  <body>
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
+  <body id="page-top" class="index">
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
   </body>
+
+  {% include tail_js.html %}
 
 </html>
