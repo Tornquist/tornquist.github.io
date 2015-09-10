@@ -372,6 +372,10 @@ section {
     padding: 100px 0;
 }
 
+section.small-padding {
+    padding: 50px 0;
+}
+
 section h2.section-heading {
     margin-top: 0;
     margin-bottom: 15px;
