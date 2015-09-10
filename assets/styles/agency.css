@@ -299,6 +299,11 @@ header {
     -o-background-size: cover;
 }
 
+header .intro-title {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
 header .intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
@@ -313,6 +318,15 @@ header .intro-text .intro-lead-in {
 }
 
 header .intro-text .intro-heading {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+header .intro-title .intro-heading {
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -336,6 +350,15 @@ header .intro-text .intro-heading {
     }
 
     header .intro-text .intro-heading {
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 75px;
+    }
+
+    header .intro-title .intro-heading {
         margin-bottom: 50px;
         text-transform: uppercase;
         font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -744,6 +767,7 @@ section#contact .text-danger {
 footer {
     padding: 25px 0;
     text-align: center;
+    border-top: 1px solid black;
 }
 
 footer span.copyright {
