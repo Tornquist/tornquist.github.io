@@ -17,6 +17,8 @@ permalink: /blog/:year/:month/:title/
 markdown: kramdown
 
 # Site Variables
+home_title: About Me
+
 milestones_heading: Professional Milestones
 milestones_subheading: A Brief History of Where I've Been
 
