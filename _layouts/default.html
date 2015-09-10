@@ -3,17 +3,27 @@
 
   {% include head.html %}
 
+  <!-- Slabtext -->
+  <script src='/assets/scripts/slabtext.js' type="text/javascript"></script>
+  <link href="{{site.baseurl}}/assets/styles/slabtext.css" rel="stylesheet">
+
+
   <body id="page-top" class="index">
     {% include header.html %}
 
     <header>
         <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
             <div class="intro-title">
               <div class="intro-heading">{{ page.title }}</div>
+              <script> $(".intro-heading").slabText(); </script>
               {% if page.date %}
                 <div class="intro-lead-in">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</div>
               {% endif %}
             </div>
+            </div>
+          </div>
         </div>
     </header>
     <section class="small-padding">
