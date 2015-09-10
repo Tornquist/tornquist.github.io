@@ -14,6 +14,19 @@
   display: inline-block;
 }
 
+@media(min-width: 768px) {
+  .bio p{
+    margin: 0 20px 10px 20px;
+  }
+}
+
+@media(min-width:768px) {
+  .bio p{
+    margin: 0 80px 10px 80px;
+  }
+}
+
+
 /* Original Styles */
 
 body {
@@ -665,7 +678,7 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    background-image: url(../img/map-image.png);
+    background-image: url(../images/map-image.png);
     background-position: center;
     background-repeat: no-repeat;
 }

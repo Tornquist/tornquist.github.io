@@ -28,8 +28,12 @@ welcome_button_text: Learn About Me
 contact_heading: Contact Me
 contact_subheading: I'd love to hear from you
 
+biography_heading: Who I Am
+biography_subheading: I'd like to tell you about myself.
+
 copyright: Copyright &copy; Nathan Tornquist 2010-2015
 
 collections:
+- biographies
 - milestones
 - contact_links
