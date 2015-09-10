@@ -6,7 +6,6 @@ categories: thought
 custom_css:
 - colorbox
 custom_js:
-- jquery
 - photoset-grid
 - colorbox
 ---

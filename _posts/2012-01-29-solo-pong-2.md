@@ -7,7 +7,6 @@ custom_css:
 - colorbox
 - youtube_embed
 custom_js:
-- jquery
 - photoset-grid
 - colorbox
 ---
