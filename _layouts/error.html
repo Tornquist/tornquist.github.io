@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<!-- Slabtext -->
+<script src='/assets/scripts/slabtext.js' type="text/javascript"></script>
+<link href="{{site.baseurl}}/assets/styles/slabtext.css" rel="stylesheet">
+
+
+<body id="page-top" class="index">
+{% include header.html %}
+
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="intro-title">
+          <div class="intro-heading">{{ page.title }}</div>
+          <script> $(".intro-heading").slabText(); </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% include footer.html %}
+</body>
+
+{% include tail_js.html %}
+
+</html>

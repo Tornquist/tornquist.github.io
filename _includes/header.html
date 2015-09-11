@@ -5,9 +5,11 @@
       <li><a href="{{ site.baseurl }}/">{{ site.home_title }}</a></li>
       {% for page in site.pages %}
         {% if page.title %}
-        <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-    {% endif %}
-    {% endfor %}
+          {% if page.ignore != true %}
+            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
     </ul>
   </div>
 </nav>
