@@ -33,6 +33,9 @@
             {% if page.date %}
               <span>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</span>
             {% endif %}
+            {% if page.release or page.category %}
+              <span>{{ page.release }}{% if page.release and page.category %} • {% endif %}{{ page.category }}</span>
+            {% endif %}
 
             {% if page.previous or page.next %}
               <span class="next-link">
@@ -49,7 +52,7 @@
     </div>
   </div>
 </header>
-<section class="small-padding">
+<section class="small-padding{% if page.section_class %} {{ page.section_class }}{% endif %}" {% if page.section_id %}id="{{ page.section_id }}"{% endif %}>
   <div class="container">
     {{ content }}
   </div>
