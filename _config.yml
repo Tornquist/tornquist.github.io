@@ -36,7 +36,12 @@ biography_subheading: I'd like to tell you about myself.
 copyright: Copyright &copy; Nathan Tornquist 2010-2015
 
 collections:
-- biographies
-- milestones
-- contact_links
-- projects
+  biographies:
+    output: false
+  milestones:
+    output: false
+  contact_links:
+    output: false
+  projects:
+    output: true
+    permalink: /projects/:path/

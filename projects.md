@@ -2,10 +2,26 @@
 layout: default
 title: Projects
 permalink: /projects/
+section_id: portfolio
+section_class: bg-light-gray
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+<div class="row">
+{% for project in site.projects %}
+  <div class="col-md-4 col-sm-6 portfolio-item">
+    <a class="portfolio-link" data-toggle="modal" href="#bad_link">
+      <div class="portfolio-hover">
+        <div class="portfolio-hover-content">
+          <i class="fa fa-plus fa-3x"></i>
+        </div>
+      </div>
+      <img alt="{{ project.title }}" class="img-responsive" src="/assets/images/projects/{{ project.promo_image }}">
+    </a>
+    <div class="portfolio-caption">
+      <p class="text-muted">
+        {{ project.promo_description }}
+      </p>
+    </div>
+  </div>
+{% endfor %}
+</div>
