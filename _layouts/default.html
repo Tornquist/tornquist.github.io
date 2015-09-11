@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+{% include head.html %}
 
-  <!-- Slabtext -->
-  <script src='/assets/scripts/slabtext.js' type="text/javascript"></script>
-  <link href="{{site.baseurl}}/assets/styles/slabtext.css" rel="stylesheet">
+<!-- Slabtext -->
+<script src='/assets/scripts/slabtext.js' type="text/javascript"></script>
+<link href="{{site.baseurl}}/assets/styles/slabtext.css" rel="stylesheet">
 
 
-  <body id="page-top" class="index">
-    {% include header.html %}
+<body id="page-top" class="index">
+{% include header.html %}
 
-    <header>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-            <div class="intro-title">
-              <div class="intro-heading">{{ page.title }}</div>
-              <script> $(".intro-heading").slabText(); </script>
-              {% if page.date %}
-                <div class="intro-lead-in">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</div>
-              {% endif %}
-            </div>
-            </div>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="intro-title">
+          <div class="intro-heading">{{ page.title }}</div>
+          <script> $(".intro-heading").slabText(); </script>
+          <div class="intro-lead-in">
+
+            {% if page.previous or page.next %}
+              <span class="previous-link">
+                {% if page.previous %}
+                  <a rel="prev" href="{{ page.previous.url }}" title="{{ page.previous.title }}">&#9668;</a>
+                {% else %}
+                  &#9668;
+                {% endif %}
+              </span>
+            {% endif %}
+
+            {% if page.date %}
+              <span>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</span>
+            {% endif %}
+
+            {% if page.previous or page.next %}
+              <span class="next-link">
+                {% if page.next %}
+                  <a rel="next" href="{{ page.next.url }}" title="{{ page.next.title }}">&#9658;</a>
+                {% else %}
+                  &#9658;
+                {% endif %}
+              </span>
+            {% endif %}
           </div>
         </div>
-    </header>
-    <section class="small-padding">
-      <div class="container">
-        {{ content }}
       </div>
-    </section>
+    </div>
+  </div>
+</header>
+<section class="small-padding">
+  <div class="container">
+    {{ content }}
+  </div>
+</section>
 
-    {% include footer.html %}
-  </body>
+{% include footer.html %}
+</body>
 
-  {% include tail_js.html %}
+{% include tail_js.html %}
 
 </html>
