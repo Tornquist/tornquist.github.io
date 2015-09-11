@@ -15,7 +15,9 @@ $spacing-unit:     30px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$brand-color:      #0099cc;
+
+$brand-color-verylight: lighten($brand-color, 50%);
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -54,5 +56,6 @@ img {
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+        "post",
         "syntax-highlighting"
 ;
