@@ -8,8 +8,7 @@ subtitle: A cross between an arcade and RTS game
 release: July 2012
 category: Arcade/RTS Game
 ---
-Arcis is the largest personal project that I have created to date. This game was my first
-large-scale Android project and the first that had any semblance of an artifical intelligence
+Arcis was my first large-scale Android project and the first that had any semblance of an artifical intelligence
 system. I reverse engineered A\* pathfinding to improve performance and allow all of the enemy
 units to navigate together. Testing was done through major Reddit croudsourcing and I received
 incredibly valuable feedback for the creation of the final product.

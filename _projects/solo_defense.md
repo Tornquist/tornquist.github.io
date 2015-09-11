@@ -6,7 +6,7 @@ promo_description: Pong with a Twist
 title: Solo Defense
 subtitle: A twist on the classic game of Pong
 release: March 2011
-category: Arcade
+category: Arcade Game
 ---
 Solo Defense was the first game that I put on Google Play, and the first game that I make in
 every new language that I learn. This game normally acts as a quick 1-day project I use to

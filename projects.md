@@ -9,7 +9,7 @@ section_class: bg-light-gray
 <div class="row">
 {% for project in site.projects %}
   <div class="col-md-4 col-sm-6 portfolio-item">
-    <a class="portfolio-link" data-toggle="modal" href="#bad_link">
+  <a class="portfolio-link" data-toggle="modal" href="{{ project.url }}">
       <div class="portfolio-hover">
         <div class="portfolio-hover-content">
           <i class="fa fa-plus fa-3x"></i>
