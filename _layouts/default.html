@@ -17,7 +17,7 @@
       <div class="col-md-8 col-centered">
         <div class="intro-title reduced-center">
           <div class="intro-heading">{{ page.title }}</div>
-          <script> $(".intro-heading").slabText(); </script>
+          <script> $(".intro-heading").slabText();$(window).trigger('resize');</script>
           <div class="intro-lead-in">
 
             {% if page.previous or page.next %}
