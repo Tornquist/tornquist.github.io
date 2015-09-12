@@ -59,6 +59,11 @@ img {
     margin: 0 auto;
 }
 
+.reduced-center {
+  width: 90%;
+  margin: auto;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "post",
