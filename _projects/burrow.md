@@ -7,6 +7,7 @@ title: Burrow
 subtitle: A game about one rabbit's fight for survival
 release: March 2014
 category: Casual Arcade Game
+rel_sort: 30
 ---
 Burrow is the product of a 24-hour race to build a "Flappy-Bird"-like game. This project included a
 redesign of the libraries that I developed during the creation of Arcis. My focus with this project

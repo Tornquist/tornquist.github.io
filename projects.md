@@ -7,7 +7,8 @@ section_class: bg-light-gray
 ---
 
 <div class="row">
-{% for project in site.projects %}
+{% assign sorted_projects = site.projects | sort: 'rel_sort' | reverse %}
+{% for project in sorted_projects %}
   <div class="col-md-4 col-sm-6 portfolio-item">
   <a class="portfolio-link" data-toggle="modal" href="{{ project.url }}">
       <div class="portfolio-hover">

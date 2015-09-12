@@ -7,6 +7,7 @@ title: Arcis
 subtitle: A cross between an arcade and RTS game
 release: July 2012
 category: Arcade/RTS Game
+rel_sort: 20
 ---
 Arcis was my first large-scale Android project and the first that had any semblance of an artifical intelligence
 system. I reverse engineered A\* pathfinding to improve performance and allow all of the enemy
