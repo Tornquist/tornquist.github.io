@@ -54,6 +54,11 @@ img {
     margin-bottom: $spacing-unit / 2;
 }
 
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "post",

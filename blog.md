@@ -38,7 +38,7 @@ permalink: /blog/
 </script>
 
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-8 col-centered">
   <a class="btn btn-default btn-filter" onclick="clickBlogBtn('blog_post');" id="blog_post_btn">All Posts</a>
      {% for category in site.categories %}
        <a class="btn btn-default btn-filter" onclick="clickBlogBtn('cat_{{ category | first | remove:' '}}');" id="cat_{{ category | first | remove:' '}}_btn"> {{ category | first | capitalize }} </a>
@@ -46,7 +46,7 @@ permalink: /blog/
    </div>
  </div>
  <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-8 col-centered">
     {% for post in site.posts %}
       <div class="row blog_post {% for category in post.categories%}cat_{{ category }}{% endfor %}">
         <div class="col-sm-12">
