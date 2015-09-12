@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Objective-C - Image System"
+title: "Objective-C: Image System"
 date: 2011-01-17 11:28:00
 categories: code
 ---

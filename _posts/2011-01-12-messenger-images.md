@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Messenger - Images"
+title: "Messenger: Images"
 date: 2011-01-12 11:55:00
 categories: thought
 ---

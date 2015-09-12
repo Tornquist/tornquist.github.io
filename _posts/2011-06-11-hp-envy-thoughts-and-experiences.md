@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HP ENVY - Thoughts and Experiences"
+title: "HP ENVY Thoughts and Experiences"
 date: 2011-06-11 23:09:00
 categories: thought
 ---

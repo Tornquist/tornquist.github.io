@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "MegaBrite - Programmable RGB LED"
+title: "MegaBrite Programmable RGB LED"
 date: 2013-07-07 15:01:00
 categories: code
 ---

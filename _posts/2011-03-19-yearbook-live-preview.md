@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Yearbook: Live Preview"
+title: "Yearbook Live Preview"
 date: 2011-03-19 08:55:00
 categories: thought
 custom_css:

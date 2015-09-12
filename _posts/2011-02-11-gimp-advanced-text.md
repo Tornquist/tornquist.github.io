@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GIMP - Advanced Text"
+title: "GIMP Advanced Text"
 date: 2011-02-01 09:46:00
 categories: thought
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Petronic Arts - Idea to Reality"
+title: "Petronic Arts: Idea to Reality"
 date: 2012-02-15 17:29:00
 categories: thought
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Objective-C - Instance Variables and Where They Like to Play"
+title: "Objective-C: Instance Variables and Where They Like to Play"
 date: 2011-01-29 21:36:00
 categories: code
 ---
