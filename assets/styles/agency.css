@@ -39,6 +39,12 @@ body {
     color: #777;
 }
 
+.text-milestone {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
 .text-primary {
     color: #0099cc;
 }
@@ -307,7 +313,7 @@ header .intro-title {
 
 header .intro-text {
     padding-top: 100px;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 
 header .intro-text .intro-lead-in {
@@ -344,10 +350,19 @@ header .intro-title .intro-lead-in {
     line-height: 22px;
 }
 
+header .intro-typing-text {
+  /* This height is twice the line height.  This change should correct
+   * for the scaling of the background caused when the text being typed
+   * suddently spans an extra line on smaller screens.  This assumes that
+   * the maximum wrapping is two lines.
+   */
+  height: 100px;
+}
+
 @media(min-width:768px) {
     header .intro-text {
         padding-top: 150px;
-        padding-bottom: 200px;
+        /* padding-bottom: 200px; */
     }
 
     header .intro-text .intro-lead-in {
@@ -382,6 +397,15 @@ header .intro-title .intro-lead-in {
         font-size: 40px;
         font-style: italic;
         line-height: 40px;
+    }
+    
+    header .intro-typing-text {
+      /* This height is twice the line height.  This change should correct
+       * for the scaling of the background caused when the text being typed
+       * suddently spans an extra line on smaller screens.  This assumes that
+       * the maximum wrapping is two lines.
+       */
+      height: 150px;
     }
 }
 

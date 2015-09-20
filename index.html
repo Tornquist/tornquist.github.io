@@ -4,7 +4,75 @@ custom_css:
 - img-properties
 ---
 
-{% include homepage_segments/banner.html %}
-{% include homepage_segments/biography.html %}
-{% include homepage_segments/milestones.html %}
-{% include homepage_segments/contact.html %}
+<header>
+  <div class="container">
+    <div class="intro-text">
+      <div class="img-wrapper">
+        <img class="img-circle img-emphasis img-space img-center" src="/assets/images/{{ site.welcome_image }}">
+      </div>
+      <div class="intro-lead-in">{{ site.welcome_small }}</div>
+      <div class="intro-lead-in">
+        {% include social_buttons.html %}
+      </div>
+      <div class="intro-heading">
+        <div class="intro-typing-text">
+          I'm <span id="typed_banner"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/scripts/typed.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/styles/typed.css">
+  <script>
+$(function(){
+  $("#typed_banner").typed({
+    strings: [
+      "an engineer",
+      "a musician",
+      "an artist"
+    ],
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 1500,
+    loop: true
+  });
+});
+  </script>
+</header>
+
+<section class="small-padding{% if page.section_class %} {{ page.section_class }}{% endif %}" {% if page.section_id %}id="{{ page.section_id }}"{% endif %}>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-centered">
+        <h1>
+          Recent Posts
+        </h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-centered">
+        {% for post in site.posts %}
+          <div class="row blog_post">
+            <div class="col-sm-12">
+              <h2>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                <br/>
+                <small>
+                  {{ post.date | date: "%b %-d, %Y" }}
+                  {% if post.categories %}
+                    {% for category in post.categories %}
+                      &middot; {{ category }}
+                    {% endfor %}
+                  {% endif %}
+                </small>
+              </h2>
+              <hr>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

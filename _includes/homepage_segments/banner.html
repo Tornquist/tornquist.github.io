@@ -5,8 +5,26 @@
             <img class="img-circle img-emphasis img-space img-center" src="/assets/images/{{ site.welcome_image }}">
           </div>
           <div class="intro-lead-in">{{ site.welcome_small }}</div>
-          <div class="intro-heading">{{ site.welcome_big }}</div>
+          <div class="intro-heading">I'm <span id="typed_banner"></span></div>
           <a href="#biography" class="page-scroll btn btn-xl">{{ site.welcome_button_text }}</a>
         </div>
     </div>
+  <script src="assets/scripts/typed.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/styles/typed.css">
+  <script>
+      $(function(){
+          $("#typed_banner").typed({
+            strings: [
+              "an engineer",
+              "a musician",
+              "an artist",
+              "a boilermaker"
+            ],
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 1500,
+            loop: true
+          });
+      });
+  </script>
 </header>
