@@ -9,7 +9,7 @@ custom_js:
 - photoset-grid
 - colorbox
 ---
-# Movement I: The Backstory
+# Movement I - The Backstory:
 
 Over the past semester I have designed and developed a new tool for the Band and Orchestra department at Purdue University. My product is really the final iteration in a process that has spanned the last five or so years. Recruitment is a difficult process and the original goal was to have some sort of online system that allowed tracking of incoming students and provided a better level of accountability. The aim was to eliminate as much uncertainty as possible regarding the expected numbers of students at band camp. Planning for the season and shows starts well before band camp, so the more accurate the information is, the more planning can be done in advance.
 
@@ -19,7 +19,7 @@ After he graduated, he handed me the codebase and I became the new webmaster of 
 
 Doug's system was effective and met the need that existed, but required both a fair amount of time and a fair amount of skill to maintain. I had my work cut out for me though, Doug had figured out what the need was and already determined how the userbase inside Purdue Bands functioned. The Minimum Viable Product existed, and the next logical step was version 2.0. With all of his "market research" in hand, I made it my goal to eliminate my job.
 
-# Movement II: Making Contact
+# Movement II - Making Contact:
 
 When I set out to add the new parental contact information I discovered a fundamental flaw in the original design.  There was no way for the people responsible for managing recruitment to adjust a contact form on their own.  To do so, they would have to contact the current webmaster and wait for that individual to take care of it.  In most cases it could be done fairly quickly, but as this is a student run endeavor, what if someone has a bad week? Or a bad month?  In that case, it could be a few weeks or longer before the form is updated, and for what? To collect a few more pieces of information.  The first phase of this project revolved around creating a system that allowed for instantaneous modification of the contact form.  I wanted a form built in such a way that you could add and remove new fields at will and do so without having to change the database structure at all.
 
@@ -29,11 +29,11 @@ To comply with this flexible style of creating forms, a non-traditional database
 
 And with that, the most important piece of the new tool was built.  The ability to store student data quickly and adapt quickly without the need of a developer had been met.
 
-# Movement III: Season by Season
+# Movement III - Season by Season:
 
 With the concept of a student firmly ironed out, I needed to focus on actually making this tool useful for tracking student performance during a season.  The original version of the tool supported gigs and other notes during a season, but at the end of the year everything had to be manually emptied out and cleaned up.  After doing that once, I certainly did not wish to do it again.  The concept of a season is simple, it has a start date and an end date.  A season also has sections within it.  Each student then is part of the section.  A season's students are the sum of all of the student's within the associated sections.  That concept was built out and then expanded.  I built a way to track gigs, to add ranks (small groups) with a section, a way to track notes to directors, and a way for the leadership team to record reviews of student performance over time.  Everything at its lowest form links back to a season though, and that simple fact keeps the tool clean.
 
-# Movement IV: Turning it On
+# Movement IV - Turning it On:
 
 After the first two months or so of development most of the base features had been built.  I had a functioning model and I had developed a way to expand the tool quickly.  Because I spent so much time focusing on the database structure I avoided a lot of pitfalls that could have caught me up later on.  No matter how clean the tool was though, if it only ran on localhost on my laptop; that wouldn't really accomplish anything.
 
@@ -47,7 +47,7 @@ I have used Heroku for a number of personal projects, but the quantity of data t
 
 The final iteration was going back to Heroku and just paying for more space.  10 million rows is only $9 a month.  I'm not a fan of a limited number of rows, but at the current size and rate of usage it's 100s of years before that limit would be reached.  I had wanted to make it free if possible, but in the end it was clear that some services just need to be paid for.  Shortly after making that decision I had the website online and functioning.
 
-# Movement V: Cleaning it Up
+# Movement V - Cleaning it Up:
 
 Regardless of how many features a site has if it works slowly no one will want to use it.  The ultra clean code (minimalistic, not efficient) that I wrote generated a disgusting number of queries.  After getting everything online I had a small subset of the band leadership team lined up to do beta testing for me.  The only found one real bug, but noticed poor performance all across the site.  I had been testing with small sets of data, and had completely forgotten about scalability testing.
 
@@ -55,7 +55,7 @@ In the end, I was able to speed most of the slow pages up by over 300% and get t
 
 Over the weeks since then I have continually iterated over my original model.  Buttons have been moved, features have been added, and small changes in the overall form and function have been done all across the website.  Without the testing that the leadership team has done, and without the original design Doug laid out, my current iteration of the tool would not exist.
 
-# Movement IV: The End
+# Movement IV - The End:
 
 It has been a long road.  The first commit was made on Dec 23rd, 2014.  I took it easy over Christmas Break, but throughout this semester I have averaged 15+ hours a week of development.  I have poured all of my energy into this tool and am extremely proud of the final product.  I'm sure there is room for improvement, and I am sure that I missed some things, but without a doubt I have created something that has the potential to improve life within Purdue Bands.  I've had an incredible time at Purdue, and am hoping that this tool can live as my legacy, at least for a few years.  This was my opportunity to give back.
 
