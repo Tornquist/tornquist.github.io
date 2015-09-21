@@ -64,6 +64,10 @@ img {
   margin: auto;
 }
 
+.nav li a {
+  padding: 10px;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "post",
