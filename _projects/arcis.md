@@ -8,11 +8,23 @@ subtitle: A cross between an arcade and RTS game
 release: July 2012
 category: Arcade/RTS Game
 rel_sort: 20
+custom_css:
+- colorbox
+custom_js:
+- photoset-grid
+- colorbox
 ---
 Arcis was my first large-scale Android project and the first that had any semblance of an artifical intelligence
 system. I reverse engineered A\* pathfinding to improve performance and allow all of the enemy
 units to navigate together. Testing was done through major Reddit croudsourcing and I received
 incredibly valuable feedback for the creation of the final product.
+
+This game is best described as a mix between tower defence and arcade.
+You can shoot enemies by controlling the main tower, or build defenses
+that will attack enemies for you.  Some strategies work better than
+others, but ultimately it is up to you.
+
+{% include /galleries/project-arcis.html %}
 
 What to play the game? [Grab it on Google Play](https://play.google.com/store/apps/details?id=com.petronicarts.arcis)
 

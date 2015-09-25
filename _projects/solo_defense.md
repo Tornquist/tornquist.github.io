@@ -8,12 +8,28 @@ subtitle: A twist on the classic game of Pong
 release: March 2011
 category: Arcade Game
 rel_sort: 10
+custom_css:
+- colorbox
+custom_js:
+- photoset-grid
+- colorbox
 ---
 Solo Defense was the first game that I put on Google Play, and the first game that I make in
 every new language that I learn. This game normally acts as a quick 1-day project I use to
-teach myself basic app structure. While the game on Google Play is out of date and doesn't
+teach myself basic language features. While the game on Google Play is out of date and doesn't
 play well on modern Android devices, it still has a respectable userbase and is an important
 part of my "Android Story."
+
+The game is simple.  Like Atari's PONG, the goal is to keep the ball in
+play.  In my version however, you control all four sides.  The game
+starts with the top and sides completely filled in, and lets you move
+the bottom paddle to keep the ball in play.  As the game progresses, the
+walls shrink and you have to manage all four sides to keep the ball in
+play. Furthermore, you learn that moving one paddle will also move the
+opposite paddle in the other direction.  This game is fun, but gets
+difficult very quickly.
+
+{% include /galleries/project-solo-defense.html %}
 
 What to play the game? [Grab it on Google Play](https://play.google.com/store/apps/details?id=com.petronicarts.solodefense)
 
