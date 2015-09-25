@@ -849,9 +849,20 @@ ul.social-buttons li a {
     transition: all .3s;
 }
 
+ul.social-buttons-inverted li a {
+    color: #0099cc;
+}
+
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
+    background-color: #0099cc;
+}
+
+ul.social-buttons-inverted li a:hover,
+ul.social-buttons-inverted li a:focus,
+ul.social-buttons-inverted li a:active {
+    color: #222;
     background-color: #0099cc;
 }
 

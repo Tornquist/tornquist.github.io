@@ -6,6 +6,6 @@ custom_css:
 - img-properties
 ---
 
-{% include homepage_segments/biography.html %}
-{% include homepage_segments/milestones.html %}
-{% include homepage_segments/contact.html %}
+{% include banner_segments/biography.html %}
+{% include banner_segments/milestones.html %}
+{% include banner_segments/contact.html %}
