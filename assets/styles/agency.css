@@ -324,6 +324,11 @@ header .intro-text .intro-lead-in {
     line-height: 22px;
 }
 
+header .intro-text .intro-lead-in-margins-50 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: uppercase;
@@ -371,6 +376,11 @@ header .intro-typing-text {
         font-size: 40px;
         font-style: italic;
         line-height: 40px;
+    }
+
+    header .intro-text .intro-lead-in-margins-50 {
+      margin-top: 50px;
+      margin-bottom: 50px;
     }
 
     header .intro-text .intro-heading {

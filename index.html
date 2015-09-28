@@ -10,35 +10,9 @@ custom_css:
       <div class="img-wrapper">
         <img class="img-circle img-emphasis img-space img-center" src="/assets/images/{{ site.welcome_image }}" style="width:150px; height:150px">
       </div>
-      <div class="intro-lead-in">{{ site.welcome_small }}</div>
-      <div class="intro-lead-in">
-        {% include social_buttons.html %}
-      </div>
-      <div class="intro-heading">
-        <div class="intro-typing-text">
-          I'm <span id="typed_banner"></span>
-        </div>
-      </div>
+      <div class="intro-lead-in intro-lead-in-margins-50">{{ site.welcome_small }}</div>
     </div>
   </div>
-
-  <script src="assets/scripts/typed.js"></script>
-  <link rel="stylesheet" type="text/css" href="assets/styles/typed.css">
-  <script>
-$(function(){
-  $("#typed_banner").typed({
-    strings: [
-      "an engineer",
-      "a musician",
-      "an artist"
-    ],
-    typeSpeed: 100,
-    backSpeed: 50,
-    backDelay: 1500,
-    loop: true
-  });
-});
-  </script>
 </header>
 
 <section class="small-padding{% if page.section_class %} {{ page.section_class }}{% endif %}" {% if page.section_id %}id="{{ page.section_id }}"{% endif %}>
