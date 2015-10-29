@@ -48,7 +48,7 @@ permalink: /blog/
  <div class="row">
   <div class="col-md-8 col-centered">
     {% for post in site.posts %}
-      <div class="row blog_post {% for category in post.categories%}cat_{{ category }}{% endfor %}">
+      <div class="row blog_post{% for category in post.categories%} cat_{{ category }}{% endfor %}">
         <div class="col-sm-12">
             <h2>
               <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
