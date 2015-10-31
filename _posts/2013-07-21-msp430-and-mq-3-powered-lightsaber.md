@@ -5,6 +5,7 @@ date: 2013-07-21 21:57:00
 categories: code
 custom_css:
 - youtube_embed
+redirect_from: "/code/msp430-and-mq-3-powered-lightsaber/"
 ---
 A few weeks ago, I was looking for a summer project and wanted to make something with my msp430. Looking through random parts on SparkFun, I found a megaBrite LED. It's a programmable LED that is designed for large outdoor displays, so it's very bright. I ordered one and decided to make a lightsaber that could change color based on user input, or react to the environment with a MQ-3 sensor. This post will outline the construction and design of that project.
 

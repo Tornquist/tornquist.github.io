@@ -5,6 +5,7 @@ date: 2013-06-10 03:21:00
 categories: art
 custom_css:
 - youtube_embed
+redirect_from: "/art/purdue-infinity-mirror/"
 ---
 After seeing some awesome videos of infinity mirrors on YouTube I decided that I should build my own for my apartment next year.  Check out the video and photos below!
 
