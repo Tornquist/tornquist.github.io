@@ -9,7 +9,7 @@ Computer Engineering in May of 2015. While at Purdue I was a dedicated member of
 in Chicago as a member of the [City Wide Symphony
 Orchestra](http://www.citywideorchestra.org/).
 
-I am currently working as a software developer for [Enova
-International](http://www.enova.com).  At Enova I am a member of the
-mobile team, and spend my days designing everything from native
-applications (iOS and Android) to the servers that power them (Go).
+I am currently the iOS engineer for [ECD-Network](http://ecd-network.com/).
+Working on [SkinIO](https://skinio.com/) I am responsibile for
+building out the client application and setting up the team
+for long term success in the mobile space.
