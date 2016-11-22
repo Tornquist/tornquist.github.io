@@ -1,6 +1,6 @@
 ---
-layout: milestone_left
-date_text: April 2016 - Present
+layout: milestone_right
+date_text: April 2016 - September 2016
 title: ECD Network
 description: >
   As the iOS engineer on the team, I am responsible for the native
