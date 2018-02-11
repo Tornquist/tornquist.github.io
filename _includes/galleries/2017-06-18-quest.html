@@ -1,0 +1,40 @@
+<div class="photoset-grid" style="visibility: hidden;">
+    <img src="/assets/2017/06/quest_start_1.png">
+    <img src="/assets/2017/06/quest_camera_1.png">
+    <img src="/assets/2017/06/quest_camera_2.png">
+    <img src="/assets/2017/06/quest_compass_1.png">
+    <img src="/assets/2017/06/quest_map_1.png">
+</div>
+
+<script>
+    $('.photoset-grid').photosetGrid({
+        layout: '5',
+        width: '100%',
+        gutter: '5px',
+        highresLinks: true,
+        lowresWidth: 300,
+        rel: 'gallery-01',
+        borderActive: false,
+        borderWidth: '3px',
+        borderColor: '#000000',
+        borderRadius: '3px',
+        borderRemoveDouble: false,
+
+        onInit: function() {},
+        onComplete: function() {
+
+            $('.photoset-grid').css({
+                'visibility': 'visible'
+            });
+
+            $('.photoset-grid').attr('style', '');
+
+            $('.photoset-grid a').colorbox({
+                photo: true,
+                scalePhotos: true,
+                maxHeight: '90%',
+                maxWidth: '90%'
+            });
+        }
+    });
+</script>
