@@ -408,7 +408,7 @@ header .intro-typing-text {
         font-style: italic;
         line-height: 40px;
     }
-    
+
     header .intro-typing-text {
       /* This height is twice the line height.  This change should correct
        * for the scaling of the background caused when the text being typed
