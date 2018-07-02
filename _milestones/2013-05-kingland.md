@@ -1,5 +1,5 @@
 ---
-layout: milestone_left
+layout: milestone
 date_text: Summer 2013
 title: Kingland Systems
 description: >

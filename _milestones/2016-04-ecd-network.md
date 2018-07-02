@@ -1,5 +1,5 @@
 ---
-layout: milestone_right
+layout: milestone
 date_text: April 2016 - September 2016
 title: ECD Network (now SkinIO)
 description: >

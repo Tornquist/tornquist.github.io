@@ -1,5 +1,5 @@
 ---
-layout: milestone_left
+layout: milestone
 date_text: 2010-2012
 title: DealerBuilt
 description: >
