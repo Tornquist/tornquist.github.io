@@ -7,6 +7,7 @@ promo_description: Digital Scavenger Hunt
 title: Quest
 subtitle: ECE477 Senior Design
 release: June 2017
+featured: true
 rel_sort: 41
 custom_css:
 - colorbox

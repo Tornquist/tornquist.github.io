@@ -7,6 +7,7 @@ promo_description: Sports Graphics
 title: Uplink Sports
 subtitle: Sports Graphics Made Simple
 release: October 2016
+featured: true
 rel_sort: 41
 custom_css:
 - colorbox

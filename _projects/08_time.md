@@ -7,6 +7,7 @@ promo_description: 2017 Work Analysis
 title: 2017 Work Analysis
 subtitle: Time Tracking Done Right
 release: Feb 2018
+featured: true
 rel_sort: 41
 custom_css:
 - colorbox
