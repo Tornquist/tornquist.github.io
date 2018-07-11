@@ -6,7 +6,6 @@ promo_description: An Arcade/RTS Game
 title: Arcis
 subtitle: A cross between an arcade and RTS game
 release: July 2012
-category: Arcade/RTS Game
 rel_sort: 20
 custom_css:
 - colorbox

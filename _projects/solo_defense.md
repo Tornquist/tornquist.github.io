@@ -6,7 +6,6 @@ promo_description: Pong with a Twist
 title: Solo Defense
 subtitle: A twist on the classic game of Pong
 release: March 2011
-category: Arcade Game
 rel_sort: 10
 custom_css:
 - colorbox

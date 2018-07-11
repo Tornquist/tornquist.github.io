@@ -6,7 +6,6 @@ promo_description: A Recruiting Tool
 title: Online Toolbox
 subtitle: Marching Band Redefined
 release: May 2015
-category: Band Recruiting Tool
 rel_sort: 40
 custom_css:
 - colorbox

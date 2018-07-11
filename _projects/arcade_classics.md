@@ -6,7 +6,6 @@ promo_description: Zune Game Collection
 title: Arcade Classics
 subtitle: Zune Games.
 release: August 2008
-category: Arcade Game
 rel_sort: 5
 custom_css:
 - colorbox

@@ -30,11 +30,10 @@
               </span>
             {% endif %}
 
-            {% if page.date %}
-              <span>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</span>
-            {% endif %}
             {% if page.release or page.category %}
               <span>{{ page.release }}{% if page.release and page.category %} • {% endif %}{{ page.category }}</span>
+            {% elsif page.date %}
+              <span>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</span>
             {% endif %}
 
             {% if page.previous or page.next %}

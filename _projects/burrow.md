@@ -6,7 +6,6 @@ promo_description: A Game about Survival
 title: Burrow
 subtitle: A game about one rabbit's fight for survival
 release: March 2014
-category: Casual Arcade Game
 rel_sort: 30
 custom_css:
 - colorbox

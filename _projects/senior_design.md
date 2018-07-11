@@ -6,7 +6,6 @@ promo_description: ECE Senior Design
 title: Twitch Plays Robot Soccer
 subtitle: ECE477 Senior Design
 release: May 2015
-category: Senior Design
 rel_sort: 41
 custom_css:
 - colorbox
