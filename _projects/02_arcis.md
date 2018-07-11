@@ -1,4 +1,5 @@
 ---
+slug: arcis
 layout: project
 promo_image: arcis.png
 feature_image: arcis_full.png

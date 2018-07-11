@@ -1,12 +1,12 @@
 ---
-slug: senior-design
+slug: uplink
 layout: project
-promo_image: senior_design.png
-feature_image: senior_design_full.png
-promo_description: ECE Senior Design
-title: Twitch Plays Robot Soccer
-subtitle: ECE477 Senior Design
-release: May 2015
+promo_image: uplink.png
+feature_image: uplink_full.png
+promo_description: Sports Graphics
+title: Uplink Sports
+subtitle: Sports Graphics Made Simple
+release: October 2016
 rel_sort: 41
 custom_css:
 - colorbox

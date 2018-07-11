@@ -1,4 +1,5 @@
 ---
+slug: burrow
 layout: project
 promo_image: burrow.png
 feature_image: burrow_full.png

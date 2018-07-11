@@ -1,4 +1,5 @@
 ---
+slug: arcade-classics
 layout: project
 promo_image: arcade_classics.png
 feature_image: arcade_classics_full.png

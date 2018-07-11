@@ -1,4 +1,5 @@
 ---
+slug: online-toolbox
 layout: project
 promo_image: online_toolbox.png
 feature_image: online_toolbox_full.png

@@ -1,4 +1,5 @@
 ---
+slug: solo-defense
 layout: project
 promo_image: solo_defense.png
 feature_image: solo_defense_full.png
