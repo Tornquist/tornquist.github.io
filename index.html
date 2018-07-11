@@ -31,7 +31,7 @@ custom_css:
           {% assign sorted_projects = site.projects | sort: 'rel_sort' | reverse %}
           {% assign featured_projects = sorted_projects | where:"featured", true %}
           {% for project in featured_projects %}
-            <div class="col-xs-4 portfolio-item">
+            <div class="col-xs-6 col-sm-4 portfolio-item">
               <a class="portfolio-link" data-toggle="modal" href="{{ project.url }}">
                 <div class="portfolio-hover">
                   <div class="portfolio-hover-content">
