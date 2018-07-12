@@ -19,7 +19,7 @@ custom_js:
 
 {% for post in site.posts %}
 {% if post.title == page.title %}
-  ***Note:** This is a clone of the original [blog post]({{ post.url }}).*
+  *<strong>Note:</strong> This is a clone of the original [blog post]({{ post.url }}).*
   {{ post.content }}
 {% endif %}
 {% endfor %}
