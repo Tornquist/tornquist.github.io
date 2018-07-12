@@ -16,32 +16,34 @@ custom_js:
 - photoset-grid
 - colorbox
 ---
-My senior design project was ***robot soccer controlled and broadcast to
-Twitch***.  It was pretty much the coolest project ever.
+{% include /galleries/project-uplink.html %}
 
-I teamed up with three of my friends to
-build a soccer arena and robots to compete in it.  Our directive was to
-build something useful that incorporated a microcontroller as well as a
-plethora of on-chip and off-chip peripherals. We built the most useful
-thing that we could think of.
+When building a social media program for athletics, good and consistent graphics
+are an extremely powerful tool. Whether it is a picture of a play that just occurred,
+or a summary of pre/post game festivities, the visual aspect matters a lot.
 
-This is our gaudy promo/demo video:
+My brother is a professional motion video designer in college athletics. He designs
+the social media campaigns and final graphics for use during and around games.
+
+While he may be the only individual designing a particular graphic, the entire
+program is facilitated by multiple people in the design team and on the field.
+It's a large team, and a luxury that not every organization will have. High schools,
+smaller colleges, and even less popular sports at D1 schools may not (and probably)
+will not have access to resources like that.
+
+> That's where Uplink comes in.
+
+Uplink is designed to bridge that gap. Together we designed and built this product
+to fill that need.
+
+Uplink is designed to be a **fast** and **easy** tool that allows social graphics to
+be created from a smart phone on the field. Our templates are designed for particular
+sports and allow for photos and logos to be added to a writeup of the final score or play
+and shared directly on Twitter, Facebook, etc.
+
+[Download the app](https://itunes.apple.com/us/app/uplink-sports/id1110791566?mt=8) or
+check out our promo video below:
 
 <div class="video-container">
-<iframe class="video" src="https://www.youtube.com/embed/29wN6f5H5uw" frameborder="0" allowfullscreen></iframe>
+<iframe class="video" src="https://www.youtube.com/embed/woP3u6Mk9Pg" frameborder="0" allowfullscreen></iframe>
 </div>
-
-We chose to build robots that could play soccer.  Our system ended up
-using far more than just a microcontroller.  Each robot had a
-microcontroller that functioned as the "brains" of the bot.  That
-microcontroller would communicate with a WiFi Module to request
-commands, and direct the motors to execute those commands.  A central
-webserver on the arena kept track of the scoring and managed the webcam
-feeds.  Finally, a webserver running on a laptop communicated with
-Twitch to receive and queue commands for the robots, and sent video back
-to the users. Oh and ***the robots were powered like bumper cars.***
-
-{% include /galleries/project-senior-design.html %}
-
-What to learn more? [Check out the project
-website](https://engineering.purdue.edu/ece477/Archive/2015/Spring/477grp1/)
