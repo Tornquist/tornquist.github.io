@@ -1,11 +1,12 @@
 ---
-layout: milestone_right
+layout: milestone
 date_text: April 2016 - September 2016
-title: ECD Network
+title: ECD Network (now SkinIO)
 description: >
-  As the iOS engineer on the team, I am responsible for the native
-  frontend of SkinIO (an early skin cancer detection system). My
-  responsibilities include developing the existing prototype and
-  refactoring it for long term sustainability and scaleability.
+  I joined ECD-Network as the first non-contract/full-time iOS engineer. My role was
+  to take the existing iOS prototype and rebuild it for sustainability and scaleability.
+  I ended up redesigning the application from the ground up. The redesign work
+  expanded into a full server redesign and then a full redesign of the entire
+  technology stack as I took over as lead engineer (see SkinIO).
 image: ecd_network.png
 ---

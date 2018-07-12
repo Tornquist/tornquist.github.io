@@ -20,6 +20,39 @@ custom_css:
     <div class="row">
       <div class="col-md-8 col-centered">
         <h1>
+          Featured Projects
+        </h1>
+      </div>
+    </div>
+
+    <div class="row" id="portfolio">
+      <div class="col-md-8 col-centered">
+        <div class="row">
+          {% assign sorted_projects = site.projects | sort: 'rel_sort' | reverse %}
+          {% assign featured_projects = sorted_projects | where:"featured", true %}
+          {% for project in featured_projects %}
+            <div class="col-xs-6 col-sm-4 portfolio-item">
+              <a class="portfolio-link" data-toggle="modal" href="{{ project.url }}">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img alt="{{ project.title }}" class="img-responsive" src="/assets/images/projects/{{ project.promo_image }}">
+              </a>
+            </div>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="small-padding{% if page.section_class %} {{ page.section_class }}{% endif %}" {% if page.section_id %}id="{{ page.section_id }}"{% endif %}>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-centered">
+        <h1>
           Recent Posts
         </h1>
       </div>
