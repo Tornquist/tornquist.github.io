@@ -7,6 +7,6 @@ description: >
   to take the existing iOS prototype and rebuild it for sustainability and scaleability.
   I ended up redesigning the application from the ground up. The redesign work
   expanded into a full server redesign and then a full redesign of the entire
-  technology stack as I took over as lead engineer (see SkinIO).
+  technology stack as I took over as lead engineer and then CTO (see SkinIO).
 image: ecd_network.png
 ---
