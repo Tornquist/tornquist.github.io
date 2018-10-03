@@ -3,7 +3,7 @@ layout: biography
 photo: nathan.png
 name: Nathan Tornquist
 ---
-I am the lead engineer for [SkinIO](https://SkinIO.com/).
+I am the CTO for [SkinIO](https://SkinIO.com/).
 
 I recently built [Uplink Sports](https://uplinkapp.com) with my [brother](http://matttornquist.com/). It is no longer being actively developed,
 but I still actively maintain it.
