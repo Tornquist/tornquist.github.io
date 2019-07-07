@@ -1,0 +1,38 @@
+<div class="photoset-grid" style="visibility: hidden;">
+    <img src="/assets/2019/07/macropad-v1-design-top.jpg">
+    <img src="/assets/2019/07/macropad-v1-board-top.jpg">
+    <img src="/assets/2019/07/macropad-v1-board-bottom.jpg">
+</div>
+
+<script>
+    $('.photoset-grid').photosetGrid({
+        layout: '31',
+        width: '100%',
+        gutter: '5px',
+        highresLinks: true,
+        lowresWidth: 300,
+        rel: 'gallery-01',
+        borderActive: false,
+        borderWidth: '3px',
+        borderColor: '#000000',
+        borderRadius: '3px',
+        borderRemoveDouble: false,
+
+        onInit: function() {},
+        onComplete: function() {
+
+            $('.photoset-grid').css({
+                'visibility': 'visible'
+            });
+
+            $('.photoset-grid').attr('style', '');
+
+            $('.photoset-grid a').colorbox({
+                photo: true,
+                scalePhotos: true,
+                maxHeight: '90%',
+                maxWidth: '90%'
+            });
+        }
+    });
+</script>
