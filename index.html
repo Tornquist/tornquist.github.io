@@ -2,85 +2,44 @@
 layout: blank
 ---
 
-<header>
-  <div class="container">
-    <div class="intro-text">
-      <div class="img-wrapper">
-        <img class="img-circle img-emphasis img-space img-center" src="/assets/images/{{ site.welcome_image }}" style="width:150px; height:150px">
-      </div>
-      <div class="intro-lead-in intro-lead-in-margins-50">{{ site.welcome_small }}</div>
-    </div>
-  </div>
-</header>
-
-<section class="small-top-padding{% if page.section_class %} {{ page.section_class }}{% endif %}" {% if page.section_id %}id="{{ page.section_id }}"{% endif %}>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-centered">
-        <h1>
-          Featured Projects
-        </h1>
-      </div>
-    </div>
-
-    <div class="row" id="portfolio">
-      <div class="col-md-8 col-centered">
-        <div class="row">
-          {% assign sorted_projects = site.projects | sort: 'rel_sort' | reverse %}
-          {% assign featured_projects = sorted_projects | where:"featured", true %}
-          {% for project in featured_projects %}
-            <div class="col-xs-6 col-sm-4 portfolio-item">
-              <a class="portfolio-link" data-toggle="modal" href="{{ project.url }}">
-                <div class="portfolio-hover">
-                  <div class="portfolio-hover-content">
-                    <i class="fa fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img alt="{{ project.title }}" class="img-responsive" src="/assets/images/projects/{{ project.promo_image }}">
-              </a>
-            </div>
-          {% endfor %}
-          </div>
-        </div>
-      </div>
-  </div>
+<section>
+  <p>Hi, I'm Nathan.</p>
+  <p>I'm a software engineer living and working in Chicago.</p>
+  <p>
+    I'm the CTO at <a href="https://skinio.com">SkinIO</a>, co-founded
+    <a href="http://www.uplinkapp.com/">Uplink Sports</a> with my
+    <a href="https://twitter.com/matttornquist">brother</a> and am currently
+    working on a yet-to-be-named time analysis platform.
+  </p>
 </section>
 
-<section class="small-padding{% if page.section_class %} {{ page.section_class }}{% endif %}" {% if page.section_id %}id="{{ page.section_id }}"{% endif %}>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-centered">
-        <h1>
-          Recent Posts
-        </h1>
-      </div>
-    </div>
+<section>
+  <h2>Featured Projects</h2>
+  {% assign sorted_projects = site.projects | sort: 'rel_sort' | reverse %}
+  {% assign featured_projects = sorted_projects | where:"featured", true %}
+  <ul>
+    {% for project in featured_projects %}
+      <li><a href="{{ project.url }}">{{ project.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
 
-    <div class="row">
-      <div class="col-md-8 col-centered">
-        {% for post in site.posts limit:5 %}
-          <div class="row blog_post">
-            <div class="col-sm-12">
-              <h2>
-                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                <br/>
-                <small>
-                  {{ post.date | date: "%b %-d, %Y" }}
-                  {% if post.categories %}
-                    {% for category in post.categories %}
-                      &middot; {{ category }}
-                    {% endfor %}
-                  {% endif %}
-                </small>
-              </h2>
-              <article class="post-content">
-                <p>{{ post.content | strip_html | truncatewords: 50 }} <a href="{{post.url}}">more</a></p>
-              </article>
-              <hr>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
+<section>
+  <h2>Recent Posts</h2>
+  {% for post in site.posts limit:5 %}
+    <article>
+      <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+      <h4>
+        {{ post.date | date: "%b %-d, %Y" }}
+        {% if post.categories %}
+          {% for category in post.categories %}
+            &middot; {{ category }}
+          {% endfor %}
+        {% endif %}
+      </h4>
+      <summary>
+        {{ post.content | strip_html | truncatewords: 50 }} <a href="{{post.url}}">more</a>
+      </summary>
+    </article>
+  {% endfor %}
 </section>
