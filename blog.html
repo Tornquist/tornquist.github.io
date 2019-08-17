@@ -1,0 +1,25 @@
+---
+layout: blank
+title: Blog
+permalink: /blog/
+---
+
+<section>
+  <h1>Blog</h1>
+</section>
+
+<section>
+  {% for post in site.posts %}
+    <article>
+      <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+      <h4>
+        {{ post.date | date: "%b %-d, %Y" }}
+        {% if post.categories %}
+          {% for category in post.categories %}
+            &middot; {{ category }}
+          {% endfor %}
+        {% endif %}
+      </h4>
+    </article>
+  {% endfor %}
+</section>
