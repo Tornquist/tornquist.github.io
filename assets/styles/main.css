@@ -1,0 +1,21 @@
+.photos {
+  display: flex;
+  justify-content: flex-start;
+
+  flex-wrap: nowrap;
+  flex-direction: row;
+
+  width: 100%;
+}
+
+.photo {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 10px;
+
+  margin: 1px;
+}
+
+.photo img {
+  width: 100%;
+}
