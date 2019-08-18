@@ -13,9 +13,16 @@
   flex-shrink: 1;
   flex-basis: 10px;
 
-  margin: 1px;
+  display: flex;
+  overflow: hidden;
 }
 
+  .photos + .photos { margin-top: 6px; }
+  .photo + .photo { margin-left: 6px; }
+
 .photo img {
-  width: 100%;
+  flex: 1 1 1px;
+  min-width: 1px;
+  min-height: 1px;
+  object-fit: cover;
 }
