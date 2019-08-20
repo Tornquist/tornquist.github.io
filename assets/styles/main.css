@@ -7,6 +7,18 @@ body {
   max-width: var(--page-width);
 }
 
+/* Standalone Image */
+
+.image {
+  width: var(--page-width);
+}
+
+@media only screen and (max-width: 632px) {
+  .image {
+    width: calc(100vw - 32px);
+  }
+}
+
 /* Photo Grid */
 .photos {
   display: flex;
