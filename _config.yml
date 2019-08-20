@@ -16,6 +16,7 @@ permalink: /blog/:year/:month/:title/
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 
 # Site Variables
 home_title: Home
