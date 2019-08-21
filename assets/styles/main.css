@@ -46,6 +46,7 @@ code::-webkit-scrollbar {
 }
 
   .photos + .photos { margin-top: 6px; }
+  .video-container + .photos { margin-top: 6px; }
   .photo + .photo { margin-left: 6px; }
 
 .photo img {

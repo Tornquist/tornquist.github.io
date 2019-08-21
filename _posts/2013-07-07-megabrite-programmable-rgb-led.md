@@ -6,6 +6,7 @@ categories: code
 custom_css:
 - syntax
 ---
+
 Over the past few weeks I've been working on a project that utilizes an msp430 micro-controller and a [MegaBrite LED](https://www.sparkfun.com/products/10236).  The LED has a 32-bit shift register and supports 1024 color intensities of red, green and blue.  Unfortunately I shorted the LED chip and burned out the logic device so I cannot provide a video of it working, but this is the Energia logic I've written to control it.  This code should work for an Arduino as well.
 
 ```c

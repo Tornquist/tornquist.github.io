@@ -18,29 +18,29 @@ From a high level, I'm using a Model A Raspberry Pi as a web server to control t
 
 To connect the remote to the relay I first soldered wires to either end of the two buttons that I wanted to be able to interact with:
 
-![Circuit Board](/assets/2014/01/Garage_01.jpg)
+{% include photo.html alt="Circuit Board" img="/assets/2014/01/Garage_01.jpg" %}
 
 After using a dremel to clear out some space inside the remote, and connecting the small wires to a larger molex connection, I create the final remote appearance. The benefit of this design is that the remote still functions on its own. If we need an extra remote, it can just be unplugged from the relay.
 
-![Complete Remote](/assets/2014/01/Garage_02.jpg)
+{% include photo.html alt="Complete Remote" img="/assets/2014/01/Garage_02.jpg" %}
 
 I left my breadboard and spare parts at Purdue, so had to improvise when connecting test circuits for the relay.
 
-![Test Relay](/assets/2014/01/Garage_03.jpg)
+{% include photo.html alt="Test Relay" img="/assets/2014/01/Garage_03.jpg" %}
 
 The entire setup can be seen below. The raspberry pi is the close board with the relay in the middle, and finally the remote in the background.
 
-![Complete Setup](/assets/2014/01/Garage_04.jpg)
+{% include photo.html alt="Complete Setup" img="/assets/2014/01/Garage_04.jpg" %}
 
 Once the system was tested, a small hole had to be cut in the case for
 the power cable.
 
-![Power Access](/assets/2014/01/Garage_05.jpg)
+{% include photo.html alt="Power Access" img="/assets/2014/01/Garage_05.jpg" %}
 
 And finally the project was complete, a garage door controller that
 worked both with a webapp, and with an android application.
 
-![Final Project](/assets/2014/01/Garage_06.jpg)
+{% include photo.html alt="Final Project" img="/assets/2014/01/Garage_06.jpg" %}
 
 One of the best features of this design is that no modification is needed within the garage, and really it doesn't matter where the system is within the house. As long as the Raspberry Pi can connect to the WiFi everything should work.
 
