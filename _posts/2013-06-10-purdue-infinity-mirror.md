@@ -15,43 +15,43 @@ After seeing some awesome videos of infinity mirrors on YouTube I decided that I
 
 First I cut the wood to size.  I mitered the corners and put notches all the way around to hold the glass in place.  As you can see, the two panes of glass are different thickness.  The back pane is just a normal thin mirror where the front pane would be a thicker piece of one way glass.
 
-![Infinity Mirror Frame Cutting](/assets/2013/06/Infinity_Mirror_1.jpg)
+{% include photo.html alt="Infinity Mirror Frame Cutting" img="/assets/2013/06/Infinity_Mirror_1.jpg" %}
 
 This shows the glass set in the wood frame after it was cut.  The gap between the two is where the light reflects back and forth and where the P will be placed.  The larger the gap, the larger the space between the lights in the reflection.
 
-![Infinity Mirror Glass Fitting](/assets/2013/06/Infinity_Mirror_2.jpg)
+{% include photo.html alt="Infinity Mirror Glass Fitting" img="/assets/2013/06/Infinity_Mirror_2.jpg" %}
 
 This is just an initial test of the glass spacing to make sure that it reflected the way I wanted it to, and a test to make sure that the lights worked correctly.
 
-![Infinity Mirror Light Test](/assets/2013/06/Infinity_Mirror_3.jpg)
+{% include photo.html alt="Infinity Mirror Light Test" img="/assets/2013/06/Infinity_Mirror_3.jpg" %}
 
 I printed off a Purdue logo and then cut it out of MDF.  Once the logo was cut, I put the light strips around the edges.
 
-![Infinity Mirror MDF P](/assets/2013/06/Infinity_Mirror_4.jpg)
+{% include photo.html alt="Infinity Mirror MDF P" img="/assets/2013/06/Infinity_Mirror_4.jpg" %}
 
 This is an early test of the lit P.  To get the cords out without having them drag all over the glass, I had the glass company drill a hole behind where it would be attached, and the wires just feed into that.  In this picture the P is not covered yet, it is still bare wood.
 
-![Infinity Mirror Lit P](/assets/2013/06/Infinity_Mirror_5.jpg)
+{% include photo.html alt="Infinity Mirror Lit P" img="/assets/2013/06/Infinity_Mirror_5.jpg" %}
 
 There was a single pencil line and some marring from when the center of the P was cut out.  To solve that I glued on a construction paper cover for the P.  The material doesn't really matter here, as you can barely see the logo through the outside mirror when the light is off, and when it is on you pretty much see the area that is lit.
 
-![Infinity Mirror P Attached](/assets/2013/06/Infinity_Mirror_6.jpg)
+{% include photo.html alt="Infinity Mirror P Attached" img="/assets/2013/06/Infinity_Mirror_6.jpg" %}
 
 The picture with the lights added around the edges. If you look in the top right and bottom left you can see the wires connecting to the light strips and then going behind the mirror.  I cut a larger slot out around where the glass went so the wires wrap around the outside of the glass.
 
-![Infinity Mirror P Attached with Lights](/assets/2013/06/Infinity_Mirror_7.jpg)
+{% include photo.html alt="Infinity Mirror P Attached with Lights" img="/assets/2013/06/Infinity_Mirror_7.jpg" %}
 
 Initial test with full lighting.
 
-![Infinity Mirror Full Lighting Test](/assets/2013/06/Infinity_Mirror_8.jpg)
+{% include photo.html alt="Infinity Mirror Full Lighting Test" img="/assets/2013/06/Infinity_Mirror_8.jpg" %}
 
 The wiring from being the picture. The slit in the bottom is for the power cord, and the wire on the far left is the IR sensor.  As you can see it's a bit of a mess behind the glass.  This doesn't really matter though as all the connections are strong and I put a back over this.
 
-![Infinity Mirror Wiring](/assets/2013/06/Infinity_Mirror_9.jpg)
+{% include photo.html alt="Infinity Mirror Wiring" img="/assets/2013/06/Infinity_Mirror_9.jpg" %}
 
 The final picture, I put a false back on to contain all the wires and attached the wire to hang the picture by.
 
-![Infinity Mirror Back](/assets/2013/06/Infinity_Mirror_10.jpg)
+{% include photo.html alt="Infinity Mirror Back" img="/assets/2013/06/Infinity_Mirror_10.jpg" %}
 
 The picture is much heavier than I expected, but overall I'm very pleased with how it turned out.  I made a few mistakes along the way though.  I only left 1/4 of an inch between the bottom of the slit and the outside of the wood, which means the slits are all 1/2 inch deep.  I had intended to do it the other way, but it ended up working out.  I waxed the wood to keep the natural shine nice, but ended up putting two screws in each corner.  I would have rather not had screws in it, but as this is my first picture like this I have no idea how the lights and connections will last.  I wanted to be able to build it so that I could take it apart and fix it if I needed to.
 
