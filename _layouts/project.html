@@ -1,32 +1,5 @@
 ---
-layout: blank
+layout: post
 ---
 
-<section>
-  <h1>{{ page.title }}</h1>
-  {% if page.previous or page.next %}
-    {% if page.previous %}
-      <a rel="prev" href="{{ page.previous.url }}" title="{{ page.previous.title }}">&#9668;</a>
-    {% else %}
-      &#9668;
-    {% endif %}
-  {% endif %}
-
-  {% if page.release or page.category %}
-    {{ page.release }}{% if page.release and page.category %} • {% endif %}{{ page.category }}
-  {% elsif page.date %}
-    {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
-  {% endif %}
-
-  {% if page.previous or page.next %}
-    {% if page.next %}
-      <a rel="next" href="{{ page.next.url }}" title="{{ page.next.title }}">&#9658;</a>
-    {% else %}
-      &#9658;
-    {% endif %}
-  {% endif %}
-</section>
-
-<article>
-  {{ content }}
-</article>
+{{ content }}
