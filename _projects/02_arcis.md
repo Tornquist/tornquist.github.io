@@ -1,11 +1,7 @@
 ---
 slug: arcis
 layout: project
-promo_image: arcis.png
-feature_image: arcis_full.png
-promo_description: An Arcade/RTS Game
 title: Arcis
-subtitle: A cross between an arcade and RTS game
 release: July 2012
 rel_sort: 20
 ---

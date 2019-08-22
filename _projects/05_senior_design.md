@@ -1,13 +1,9 @@
 ---
 slug: senior-design
 layout: project
-promo_image: senior_design.png
-feature_image: senior_design_full.png
-promo_description: ECE Senior Design
 title: Twitch Plays Robot Soccer
-subtitle: ECE477 Senior Design
 release: May 2015
-rel_sort: 41
+rel_sort: 50
 custom_css:
 - youtube_embed
 ---

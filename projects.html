@@ -15,6 +15,7 @@ section_class: bg-light-gray
   {% for project in sorted_projects %}
     <article>
       <h3><a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></h3>
+      <h4>{{ project.release }}</h4>
     </article>
   {% endfor %}
 </section>

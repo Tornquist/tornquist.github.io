@@ -1,11 +1,7 @@
 ---
 slug: solo-defense
 layout: project
-promo_image: solo_defense.png
-feature_image: solo_defense_full.png
-promo_description: Pong with a Twist
 title: Solo Defense
-subtitle: A twist on the classic game of Pong
 release: March 2011
 rel_sort: 10
 ---

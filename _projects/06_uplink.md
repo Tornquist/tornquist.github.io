@@ -1,14 +1,10 @@
 ---
 slug: uplink
 layout: project
-promo_image: uplink.png
-feature_image: uplink_full.png
-promo_description: Sports Graphics
 title: Uplink Sports
-subtitle: Sports Graphics Made Simple
 release: October 2016
 featured: true
-rel_sort: 41
+rel_sort: 60
 custom_css:
 - youtube_embed
 ---

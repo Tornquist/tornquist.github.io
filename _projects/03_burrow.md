@@ -1,11 +1,7 @@
 ---
 slug: burrow
 layout: project
-promo_image: burrow.png
-feature_image: burrow_full.png
-promo_description: A Game about Survival
 title: Burrow
-subtitle: A game about one rabbit's fight for survival
 release: March 2014
 rel_sort: 30
 ---

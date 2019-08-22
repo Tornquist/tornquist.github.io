@@ -1,15 +1,12 @@
 ---
 slug: arcade-classics
 layout: project
-promo_image: arcade_classics.png
-feature_image: arcade_classics_full.png
-promo_description: Zune Game Collection
 title: Arcade Classics
-subtitle: Zune Games.
 release: August 2008
+rel_sort: 1
 ---
 
-During the early days of the Zune I built a colletion of Arcade Games
+During the early days of the Zune I built a collection of Arcade Games
 using .NET and XNA.  This is the first set of games I ever released to
 the public. It was a pretty exciting time.
 

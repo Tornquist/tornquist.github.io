@@ -1,11 +1,7 @@
 ---
 slug: online-toolbox
 layout: project
-promo_image: online_toolbox.png
-feature_image: online_toolbox_full.png
-promo_description: A Recruiting Tool
 title: Online Toolbox
-subtitle: Marching Band Redefined
 release: May 2015
 rel_sort: 40
 ---
