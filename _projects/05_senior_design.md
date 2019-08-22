@@ -9,17 +9,14 @@ subtitle: ECE477 Senior Design
 release: May 2015
 rel_sort: 41
 custom_css:
-- colorbox
 - youtube_embed
-custom_js:
-- photoset-grid
-- colorbox
 ---
+
 My senior design project was ***robot soccer controlled and broadcast to
 Twitch***.  It was pretty much the coolest project ever.
 
 I teamed up with three of my friends to
-build a soccer arena and robots to compete in it.  Our directive was to
+build a soccer arena and robots to compete in it. Our directive was to
 build something useful that incorporated a microcontroller as well as a
 plethora of on-chip and off-chip peripherals. We built the most useful
 thing that we could think of.
@@ -40,7 +37,13 @@ feeds.  Finally, a webserver running on a laptop communicated with
 Twitch to receive and queue commands for the robots, and sent video back
 to the users. Oh and ***the robots were powered like bumper cars.***
 
-{% include /galleries/project-senior-design.html %}
+{% include photos.html
+  height="16" id="senior-design"
+  img1="/assets/images/projects/senior_design/senior_design_1.jpg"
+  img2="/assets/images/projects/senior_design/senior_design_2.jpg"
+  img3="/assets/images/projects/senior_design/senior_design_3.jpg"
+  img4="/assets/images/projects/senior_design/senior_design_4.jpg"
+%}
 
 What to learn more? [Check out the project
 website](https://engineering.purdue.edu/ece477/Archive/2015/Spring/477grp1/)

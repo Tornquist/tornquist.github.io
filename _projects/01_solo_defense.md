@@ -8,12 +8,8 @@ title: Solo Defense
 subtitle: A twist on the classic game of Pong
 release: March 2011
 rel_sort: 10
-custom_css:
-- colorbox
-custom_js:
-- photoset-grid
-- colorbox
 ---
+
 Solo Defense was the first game that I put on Google Play, and the first game that I make in
 every new language that I learn. This game normally acts as a quick 1-day project I use to
 teach myself basic language features. While the game on Google Play is out of date and doesn't
@@ -29,7 +25,13 @@ play. Furthermore, you learn that moving one paddle will also move the
 opposite paddle in the other direction.  This game is fun, but gets
 difficult very quickly.
 
-{% include /galleries/project-solo-defense.html %}
+{% include photos.html
+  height="38" id="solo-defense"
+  img1="/assets/images/projects/solo_defense/Solo_Defense_1.jpg"
+  img2="/assets/images/projects/solo_defense/Solo_Defense_2.jpg"
+  img3="/assets/images/projects/solo_defense/Solo_Defense_3.jpg"
+  img4="/assets/images/projects/solo_defense/Solo_Defense_4.jpg"
+%}
 
 What to play the game? [Grab it on Google Play](https://play.google.com/store/apps/details?id=com.petronicarts.solodefense)
 

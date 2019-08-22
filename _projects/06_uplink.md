@@ -10,13 +10,17 @@ release: October 2016
 featured: true
 rel_sort: 41
 custom_css:
-- colorbox
 - youtube_embed
-custom_js:
-- photoset-grid
-- colorbox
 ---
-{% include /galleries/project-uplink.html %}
+
+{% include photos.html
+  height="35" id="uplink"
+  img1="/assets/images/projects/uplink/00_home.png"
+  img2="/assets/images/projects/uplink/01_home.png"
+  img3="/assets/images/projects/uplink/02_edit.png"
+  img4="/assets/images/projects/uplink/03_edit.png"
+  img5="/assets/images/projects/uplink/04_gallery.png"
+%}
 
 When building a social media program for athletics, good and consistent graphics
 are an extremely powerful tool. Whether it is a picture of a play that just occurred,

@@ -10,11 +10,7 @@ release: Feb 2018
 featured: true
 rel_sort: 41
 custom_css:
-- colorbox
 - youtube_embed
-custom_js:
-- photoset-grid
-- colorbox
 ---
 
 {% for post in site.posts %}

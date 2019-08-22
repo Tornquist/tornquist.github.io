@@ -8,12 +8,8 @@ title: Online Toolbox
 subtitle: Marching Band Redefined
 release: May 2015
 rel_sort: 40
-custom_css:
-- colorbox
-custom_js:
-- photoset-grid
-- colorbox
 ---
+
 For a marching band to function well it needs numbers.  You need a large
 number of people interested in auditioning so that you can select people
 that are able to play their instruments at a high performing level and
@@ -33,7 +29,25 @@ The main goal was to make the recruiting process both easier, and more
 transparent.  During the first season it was used, the trumpet section
 alone had ~20% more students in camp than the historical average.
 
-{% include /galleries/project-online-toolbox.html %}
+{% include photos.html
+  height="25" id="online-toolbox-1"
+  img1="/assets/images/projects/online_toolbox/OnlineToolbox_2.png"
+  img2="/assets/images/projects/online_toolbox/OnlineToolbox_3.png"
+%}
+{% include photos.html
+  height="13" id="online-toolbox-2"
+  img1="/assets/images/projects/online_toolbox/OnlineToolbox_5.png"
+  img2="/assets/images/projects/online_toolbox/OnlineToolbox_6.png"
+  img3="/assets/images/projects/online_toolbox/OnlineToolbox_7.png"
+  img4="/assets/images/projects/online_toolbox/OnlineToolbox_8.png"
+%}
+{% include photos.html
+  height="13" id="online-toolbox-3"
+  img1="/assets/images/projects/online_toolbox/OnlineToolbox_9.png"
+  img2="/assets/images/projects/online_toolbox/OnlineToolbox_10.png"
+  img3="/assets/images/projects/online_toolbox/OnlineToolbox_11.png"
+  img4="/assets/images/projects/online_toolbox/OnlineToolbox_12.png"
+%}
 
 Want to read more? [Check out my blog post]({% post_url 2015-05-01-online-toolbox %})
 

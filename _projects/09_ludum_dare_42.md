@@ -8,11 +8,8 @@ title: "Ludum Dare 42: Running out of Space"
 release: Aug 2018
 rel_sort: 41
 custom_css:
-- colorbox
 - youtube_embed
-custom_js:
-- photoset-grid
-- colorbox
+- syntax
 ---
 
 {% for post in site.posts %}

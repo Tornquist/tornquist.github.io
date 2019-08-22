@@ -8,18 +8,21 @@ title: Burrow
 subtitle: A game about one rabbit's fight for survival
 release: March 2014
 rel_sort: 30
-custom_css:
-- colorbox
-custom_js:
-- photoset-grid
-- colorbox
 ---
+
 Burrow is the product of a 24-hour race to build a "Flappy-Bird"-like game. This project included a
 redesign of the libraries that I developed during the creation of Arcis. My focus with this project
 was not only to create a game quickly, but to create a game that could be quickly picked up and put
 down, unlike my other games that are a little bit more demanding and have a rather steep learning curve.
 
-{% include /galleries/project-burrow.html %}
+{% include photos.html
+  height="37" id="burrow"
+  img1="/assets/images/projects/burrow/Burrow_1.jpg"
+  img2="/assets/images/projects/burrow/Burrow_2.jpg"
+  img3="/assets/images/projects/burrow/Burrow_3.jpg"
+  img4="/assets/images/projects/burrow/Burrow_4.jpg"
+  img5="/assets/images/projects/burrow/Burrow_4.jpg"
+%}
 
 Read more about it: [Burrow Blog Post]({% post_url 2014-03-27-burrow %})
 
