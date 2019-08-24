@@ -32,8 +32,8 @@ for `*.ccgame` files that drastically reduced the complexity to end users. XNA
 was still required, but it worked as a game manager instead of requiring users
 to actually compile and deploy the source.
 
-Through the links I managed, I have **6,076** downloads of the final `*.ccgame`
-file and **1,834** downloads of the final source. That's pretty good for a small
+Through the links I managed, I have 6,076 downloads of the final `*.ccgame`
+file and 1,834 downloads of the final source. That's pretty good for a small
 community and was extremely exciting at the time!
 
 My game was one of, if not the only, complete and finished game. There was a lot

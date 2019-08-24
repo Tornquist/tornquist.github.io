@@ -6,20 +6,22 @@ release: March 2011
 rel_sort: 10
 ---
 
-Solo Defense was the first game that I put on Google Play, and the first game that I make in
-every new language that I learn. This game normally acts as a quick 1-day project I use to
-teach myself basic language features. While the game on Google Play is out of date and doesn't
-play well on modern Android devices, it still has a respectable userbase and is an important
-part of my "Android Story."
+Solo Defense was the first game that I put on Google Play, and is the first game
+that I make in every new language that I learn. It was one of the first two games
+I released for the [Microsoft Zune][1].
 
-The game is simple.  Like Atari's PONG, the goal is to keep the ball in
-play.  In my version however, you control all four sides.  The game
-starts with the top and sides completely filled in, and lets you move
-the bottom paddle to keep the ball in play.  As the game progresses, the
-walls shrink and you have to manage all four sides to keep the ball in
-play. Furthermore, you learn that moving one paddle will also move the
-opposite paddle in the other direction.  This game is fun, but gets
-difficult very quickly.
+The premise is simple. Like Atari's PONG, the goal is to keep the ball in play.
+In my version however, you control paddles on all four sides of the screen.
+The game starts with the top and side paddles reaching across the entire length
+of the screen and requires you to move the bottom paddle to keep the ball in play.
+
+As the game progresses, the top paddle shrinks and eventually the side paddles
+shrink as well. Eventually, you're controlling all four paddles. The top/bottom
+and left/right paddles are linked. Moving the bottom paddle moves the top one in
+the opposite direction.
+
+This game starts pretty easy and gets very hard very quickly. Over the lifetime
+of this project I received about 5,000 installs. Pretty good for no marketing!
 
 {% include photos.html
   height="38" id="solo-defense"
@@ -29,6 +31,9 @@ difficult very quickly.
   img4="/assets/images/projects/solo_defense/Solo_Defense_4.jpg"
 %}
 
-What to play the game? [Grab it on Google Play](https://play.google.com/store/apps/details?id=com.petronicarts.solodefense)
+* [Solo Defense on Google Play][2]
+* [Source Code][3]
 
-Curious how I built it? [Look through the code](https://github.com/Tornquist/Solo_Defense)
+[1]: {% link _projects/00_arcade_classics.md %}
+[2]: https://play.google.com/store/apps/details?id=com.petronicarts.solodefense
+[3]: https://github.com/Tornquist/Solo_Defense
