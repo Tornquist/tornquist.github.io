@@ -22,14 +22,7 @@ layout: blank
   {% for post in site.posts limit:5 %}
     <article>
       <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-      <h4>
-        {{ post.date | date: "%b %-d, %Y" }}
-        {% if post.categories %}
-          {% for category in post.categories %}
-            &middot; {{ category }}
-          {% endfor %}
-        {% endif %}
-      </h4>
+      <h4>{{ post.date | date: "%b %-d, %Y" }}</h4>
       <summary>
         {{ post.content | strip_html | truncatewords: 50 }} <a href="{{post.url}}">more</a>
       </summary>
