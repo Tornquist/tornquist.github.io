@@ -6,7 +6,7 @@ release: August 2008
 rel_sort: 1
 ---
 
-During the GDC 2008, Microsoft announced that their XNA development
+During the GDC 2008 conference, Microsoft announced that the XNA development
 platform powering Xbox Live Indie Games would be extended to their Zune MP3 player.
 This was the first time that I had the skill, hardware, and timing of a new
 platform all line up together. I immediately jumped on it, and released the first
@@ -15,7 +15,7 @@ version of Arcade Classics on [ZuneBoards][1] on Aug 16, 2008.
 The first release of this project included Solo Pong and Snake. I had planned
 ahead and the initial launch included the full game list, but the games were
 disabled in the menu. Over the next few months each new release added additional
-games. The Solo Pong game is the same game mechanic that was later released on
+games. Solo Pong is the same game mechanic that was later released on
 Android as [Solo [Defense]][2] (renamed due to trademark issues with Atari).
 
 By late February I had the final version with Space Invaders and Frogger. This

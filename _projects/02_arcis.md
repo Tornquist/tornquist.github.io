@@ -37,8 +37,8 @@ store in August of 2012.
 
 The final game was difficult, but drove the shift from arcade to tower-defense
 strategies well. Early in the game it was best for the player to manually target
-and shoot enemies. By the 5th wave, it was important to build basic routing, and
-then as the game progressed the number of enemies increased so much that a good
+and shoot enemies. By the 5th wave it was important to build basic routing and
+as the game progressed the number of enemies increased so much that a good
 tower design took over gameplay completely.
 
 Each tower had a specific strength/health. Health under a certain level would

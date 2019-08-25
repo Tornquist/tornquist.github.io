@@ -6,9 +6,10 @@ release: Aug 2018
 rel_sort: 110
 ---
 
-Time is my current project. I really enjoyed the [analysis][1] of all of my working
-hours in 2017, and I'm a big fan of the infographics that [Nicholas Felton][2]
-makes on his own life.
+*Time* is my current project.
+
+I really enjoyed [analyzing my working hours in 2017][1], and I'm a
+big fan of the infographics that [Nicholas Felton][2] makes on his own life.
 
 The goal of this project is to combine those two ideas into a platform for
 continuous monitoring and reporting on how I spend my time. Past the basics of

@@ -36,7 +36,10 @@ The robots needed to be able to make network requests to the server and control
 the motor drivers that directed the wheels and front paddle (for kicking). This
 could have all been accomplished with a raspberry pi on each robot, but to meet
 the requirements for the project, we used a PIC32 microcontroller that communicated
-with a RN171 WiFi module and the motor controllers.
+with a RN171 WiFi module and the motor controllers. The board photos below show
+how all of the components were connected. The PIC32 was at the center, with WiFi
+in the top left, power in the top right, and a motor controller in each of the
+two bottom corners.
 
 {% include photos.html
   height="40" id="senior-design-1"
@@ -75,7 +78,7 @@ Some better photos of the robots:
   img3="/assets/images/projects/senior_design/senior_design_3.jpg"
 %}
 
-This is our promo/demo video:
+This is our (extremely gaudy) promo/demo video:
 
 <div class="video-container">
 <iframe class="video" src="https://www.youtube.com/embed/29wN6f5H5uw" frameborder="0" allowfullscreen></iframe>

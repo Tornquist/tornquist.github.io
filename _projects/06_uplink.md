@@ -9,8 +9,8 @@ custom_css:
 - youtube_embed
 ---
 
-When building a social media program good and consistent media is an extremely
-powerful tool. For athletics this media must also be created quickly. It is
+Consistent and high quality images are a critical aspect of building a strong
+social media program. For athletics this media must also be created quickly. It is
 important that posts about plays occur immediately after the play; any delay
 significantly reduces the effectiveness and impact of whatever was shared.
 
@@ -19,10 +19,11 @@ at Purdue while we were building Uplink together. The concept was simple, we wan
 to build a tool that would allow small athletic programs to create and build
 social media programs like the larger programs with dedicated staff.
 
-At Purdue, he sat in the pressbox and would receive feeds of photos from photographers
-on the field. These images would be fed into templates he had designed during
-the week and would then be sent out for sharing on Twitter and Instagram. The
-work Matt was doing with his team created high quality social media graphics.
+At Purdue, Matt sat in the pressbox during games and would receive feeds of photos
+from photographers on the field. These images would be fed into templates he had
+designed during the week and would then be sent out for sharing on Twitter and
+Instagram. The work Matt was doing with his team created high quality social
+media graphics.
 
 Not every program has the resources to do that, and even at universities with
 resources, the smaller sports rarely receive the same treatment as football and
