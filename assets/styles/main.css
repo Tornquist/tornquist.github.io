@@ -9,6 +9,9 @@
 
   --link-base-color: #379FC2;
   --link-hover-color: #1B4F60;
+
+  --inline-code-text-color: #B73850;
+  --inline-code-background-color: #F8F2F4;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -30,7 +33,12 @@ body {
   margin: auto;
   background-color: var(--background-color);
   color: var(--text-color);
+
+  font-kerning: normal;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  line-height: 1.4;
 }
+
 @media only screen and (max-width: 616px) {
   body { margin: 8px; }
 }
@@ -95,11 +103,21 @@ footer {
 }
 
 /* Generic width assertions */
-code {
+pre code {
   display: inline-block;
   max-width: var(--page-width);
   overflow-x: scroll;
+  background-color: inherit;
 }
+code {
+  font-size: 90%;
+  padding: 2px 4px;
+  color: var(--inline-code-text-color);
+  background-color: var(--inline-code-background-color);
+  border-radius: 4px;
+  display: inline;
+}
+
 code::-webkit-scrollbar {
   height: 1px;
 }
