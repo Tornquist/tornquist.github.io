@@ -10,5 +10,5 @@ title: Petronic Arts Privacy Policy
 
 Petronic Arts does not collect or store any user data.
 
-There are no 3rd party analytics tools, there is no 3rd party integrations, and
-there is no server submit data to.
+There are no 3rd party analytics tools, there are no 3rd party integrations, and
+there is no server to submit data to.
