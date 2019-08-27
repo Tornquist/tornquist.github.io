@@ -55,6 +55,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-mono-1);
 
+  font-family: 'Roboto', sans-serif;
   font-kerning: normal;
   font-feature-settings: "kern", "liga", "clig", "calt";
   line-height: 1.4;
@@ -66,6 +67,9 @@ body {
 
 h1, h2, h3 {
   color: var(--color-mono-0);
+}
+h3 > a {
+  text-decoration: none;
 }
 a, a:visited {
   color: var(--color-cyan);
@@ -80,6 +84,7 @@ article h3 {
 article h4 {
   margin-top: 8px;
   margin-bottom: 8px;
+  color: var(--color-mono-2);
 }
 
 article + article {
@@ -117,6 +122,7 @@ header a:hover {
 /* Footer */
 
 footer {
+  color: var(--color-mono-2);
   padding-top: 16px;
   margin-top: 16px;
   margin-bottom: 16px;
