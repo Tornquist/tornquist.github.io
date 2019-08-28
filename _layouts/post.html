@@ -15,7 +15,7 @@ layout: blank
   {% if page.release or page.category %}
     {{ page.release }}{% if page.release and page.category %} • {% endif %}{{ page.category }}
   {% elsif page.date %}
-    {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
+    {{ page.date | date: "%B %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
   {% endif %}
 
   {% if page.previous or page.next %}

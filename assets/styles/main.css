@@ -78,6 +78,9 @@ a, a:visited {
 a:hover {
   color: var(--color-green);
 }
+a[rel="prev"], a[rel="next"] {
+  text-decoration: none;
+}
 
 article h3 {
   margin-bottom: 8px;
@@ -199,11 +202,10 @@ ul.archives{
   list-style: none;
   padding-left: 0px;
 }
-
 .archives a {
+  font-size: 1.17em;
   text-decoration: none;
 }
-
 .archives span {
   color: var(--color-mono-3);
 }

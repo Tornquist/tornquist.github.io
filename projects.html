@@ -12,10 +12,13 @@ section_class: bg-light-gray
 
 <section>
   {% assign sorted_projects = site.projects | sort: 'rel_sort' | reverse %}
-  {% for project in sorted_projects %}
-    <article>
-      <h3><a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a></h3>
-      <h4>{{ project.release }}</h4>
-    </article>
-  {% endfor %}
+  <ul class='archives'>
+    {% for project in sorted_projects %}
+      <li>
+        <a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
+        &#183;
+        <span>{{ project.release }}</span>
+      </li>
+    {% endfor %}
+  </ul>
 </section>
