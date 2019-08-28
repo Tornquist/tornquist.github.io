@@ -192,3 +192,18 @@ code::-webkit-scrollbar {
   min-height: 1px;
   object-fit: cover;
 }
+
+/* Page specific -- blog archives */
+
+ul.archives{
+  list-style: none;
+  padding-left: 0px;
+}
+
+.archives a {
+  text-decoration: none;
+}
+
+.archives span {
+  color: var(--color-mono-3);
+}
