@@ -73,6 +73,7 @@ h3 > a {
   text-decoration: none;
 }
 a, a:visited {
+  text-decoration: none;
   color: var(--color-cyan);
 }
 a:hover {
@@ -119,14 +120,6 @@ header nav li + li {
   margin-left: 0.5em;
 }
 
-header a, header a:visited {
-  text-decoration: none;
-  color: var(--color-cyan);
-}
-header a:hover {
-  text-decoration: underline;
-}
-
 /* Footer */
 
 footer {
@@ -162,7 +155,7 @@ code::-webkit-scrollbar {
 
 @media only screen and (max-width: 632px) {
   code { width: calc(100vw - 32px); }
-  .image { width: calc(100vw - 32px); }
+  .image { width: 100% }
 }
 
 /* Photo Grid */
