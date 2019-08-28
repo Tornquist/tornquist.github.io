@@ -5,7 +5,12 @@ date: 2010-09-01 01:25:00
 categories: thought
 ---
 
-This post will act both as a testimony to the power of DIY Repairs and the quality of Apple products.  The iPod I repaired got run over by a car.  Everything seemed to work, but the glass was completely crushed, hence the repair.  Being a young student, I have little financial resources, and spending $150 to ship the iPod to Apple was out of the question.  Instead I decided to try my luck and repair the iPod myself.
+This post will act both as a testimony to the power of DIY Repairs and the
+quality of Apple products. The iPod I repaired got run over by a car. Everything
+seemed to work, but the glass was completely crushed, hence the repair. Being a
+young student, I have little financial resources, and spending $150 to ship the
+iPod to Apple was out of the question. Instead I decided to try my luck and
+repair the iPod myself.
 
 The parts I purchased for this repair are:
 

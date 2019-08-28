@@ -5,8 +5,6 @@ date: 2012-01-08 14:50:00
 categories: thought
 ---
 
-I am truly awful at updating this blog.  I have all these great ideas and thoughts that I want to share, but I never get around to organizing them, or presenting any of the ideas in a manner that I want to share.
-
 I am finally getting back to recreational programming.  During the last month and a half of last semester I spent countless hours trying to program a robot using the LEGO Mindstorms programming language.  That was all fine and dandy for awhile, but I quickly discovered that the software could only handle so much, and pretty soon it became impossible to actually modify my source code.  The robot my team built worked really well in our testing, but almost completely failed during the actual demonstrations because of surface differences.  We had not planned for the paper to be as slick as it actually was. Anyway, this is what the robot looked like:
 
 {% include photos.html

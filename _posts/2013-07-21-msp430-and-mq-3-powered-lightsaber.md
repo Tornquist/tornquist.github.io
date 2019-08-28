@@ -50,255 +50,293 @@ One of the trickiest thing was figuring out the resistor that scales the MQ-3 Se
 The following is the msp430 source code.  I use energia, so this logic should function on an arduino as well, you would just need to adjust the final circuit to be based on 5v.
 
 ```c
-void rgbConversion(int red, int green, int blue, int clockPin, int latchPin, int dataPin)
-{
-	//Set control values
-	//  array[0] = 0;
-	//  array[1] = 0;
-	digitalWrite(dataPin, LOW);
-	digitalWrite(clockPin, HIGH);
-	digitalWrite(clockPin, LOW);
+void rgbConversion(
+  int red, int green, int blue,
+  int clockPin, int latchPin, int dataPin
+) {
+  digitalWrite(dataPin, LOW);
+  digitalWrite(clockPin, HIGH);
+  digitalWrite(clockPin, LOW);
 
-	int j = 0;
-	int i = 9;
-	float color = blue*1023.0/255.0;
-	int colorInt = color;
-	int temp[] = {0,0,0,0,0,0,0,0,0,0};
-	for (j = 0; j < 16; j ++)
-	{
-		temp[i] = !!(colorInt & (1 << j));
-		if (j < 10)
-		{
-			i = i - 1;
-		}
-	}
-	for (i = 0; i < 10; i++)
-	{
-		digitalWrite(dataPin, temp[i]);
-		digitalWrite(clockPin, HIGH);
-		digitalWrite(clockPin, LOW);
-	}
-	i = 9;
-	color = red*1023.0/255.0;
-	colorInt = color;
-	for (j = 0; j < 16; j ++)
-	{
-		temp[i] = !!(colorInt & (1 << j));
-		if (j < 10)
-		{
-			i = i - 1;
-		}
-	}
-	for (i = 0; i < 10; i++)
-	{
-		digitalWrite(dataPin, temp[i]);
-		digitalWrite(clockPin, HIGH);
-		digitalWrite(clockPin, LOW);
-	}
-	i = 9;
-	color = green*1023.0/255.0;
-	colorInt = color;
-	for (j = 0; j < 16; j ++)
-	{
-		temp[i] = !!(colorInt & (1 << j));
-		if (j < 10)
-		{
-			i = i - 1;
-		}
-	}
-	for (i = 0; i < 10; i++)
-	{
-		digitalWrite(dataPin, temp[i]);
-		digitalWrite(clockPin, HIGH);
-		digitalWrite(clockPin, LOW);
-	}
-	digitalWrite(latchPin, HIGH);
-	digitalWrite(latchPin, LOW);
+  int j = 0;
+  int i = 9;
+  float color = blue*1023.0/255.0;
+  int colorInt = color;
+  int temp[] = {0,0,0,0,0,0,0,0,0,0};
+  for (j = 0; j < 16; j ++) {
+    temp[i] = !!(colorInt & (1 << j));
+    if (j < 10) {
+      i = i - 1;
+    }
+  }
+  for (i = 0; i < 10; i++) {
+    digitalWrite(dataPin, temp[i]);
+    digitalWrite(clockPin, HIGH);
+    digitalWrite(clockPin, LOW);
+  }
+  i = 9;
+  color = red*1023.0/255.0;
+  colorInt = color;
+  for (j = 0; j < 16; j ++) {
+    temp[i] = !!(colorInt & (1 << j));
+    if (j < 10) {
+      i = i - 1;
+    }
+  }
+  for (i = 0; i < 10; i++) {
+    digitalWrite(dataPin, temp[i]);
+    digitalWrite(clockPin, HIGH);
+    digitalWrite(clockPin, LOW);
+  }
+  i = 9;
+  color = green*1023.0/255.0;
+  colorInt = color;
+  for (j = 0; j < 16; j ++) {
+    temp[i] = !!(colorInt & (1 << j));
+    if (j < 10) {
+      i = i - 1;
+    }
+  }
+  for (i = 0; i < 10; i++) {
+    digitalWrite(dataPin, temp[i]);
+    digitalWrite(clockPin, HIGH);
+    digitalWrite(clockPin, LOW);
+  }
+  digitalWrite(latchPin, HIGH);
+  digitalWrite(latchPin, LOW);
 }
 
 void reset(int clockPin, int latchPin, int dataPin)
 {
-	int i = 0;
-	digitalWrite(dataPin, LOW);
-	for (i = 0; i < 32; i++) 	{ 		digitalWrite(clockPin, HIGH); 		digitalWrite(clockPin, LOW); 	} 	digitalWrite(latchPin, HIGH); 	digitalWrite(latchPin, LOW); } //Actual Use int analogPin = A0; int buttonPin = 4; int statePin = 3; //Control Variables int state = 0; int colorValue = 0; int newState = 0; //Misc Use Variables (Sequences and counts) int i = 0; int j = 0; //Debounce int button1Reading = 0; int lastButton1State = 1;//Start high because button sinks current long lastDebounce1Time = 0; long debounceDelay = 50; int button1Pressed = 1;		 int button1Down = 0; long lastDebounceColorTime = 0; long debounceColorDelay = 500; //LED int clockPin = 9; int enablePin = 8; int latchPin = 7; int dataPin = 6; void setup() { 	pinMode(buttonPin, INPUT_PULLUP); 	pinMode(statePin, INPUT_PULLUP); 	if (digitalRead(statePin) == HIGH) 	{ 		state = 0; 	} 	else 	{ 		state = 1;  	} 	pinMode(dataPin, OUTPUT);  	pinMode(clockPin, OUTPUT); 	pinMode(enablePin, OUTPUT); 	pinMode(latchPin, OUTPUT); 	 	digitalWrite(dataPin, LOW);	 	digitalWrite(clockPin, LOW); 	digitalWrite(enablePin, LOW); 	digitalWrite(latchPin, LOW); 	reset(clockPin, latchPin, dataPin); 	rgbConversion(255, 255, 255, clockPin, latchPin, dataPin); } int val = 0; void loop() { 	button1Reading = digitalRead(buttonPin); 	if (button1Reading != lastButton1State) 	{ 		lastDebounce1Time = millis(); 	} 	if ((millis() - lastDebounce1Time) > debounceDelay)
-	{
-		button1Pressed = button1Reading;
-	}
-	lastButton1State = button1Reading;
-	if (button1Pressed == LOW)//LOW = Pressed.  Sinks current
-	{
-		if (button1Down == 0)
-		{
-			button1Down = 1;
-			if (state == 0)
-			{
-				newState = 1;
-				colorValue = colorValue + 1;
-			}
-		}
-	}
-	else
-	{
-		button1Down = 0;
-	}
+  int i = 0;
+  digitalWrite(dataPin, LOW);
+  for (i = 0; i < 32; i++) {
+    digitalWrite(clockPin, HIGH);
+    digitalWrite(clockPin, LOW);
+  }
+  digitalWrite(latchPin, HIGH);
+  digitalWrite(latchPin, LOW);
+}
 
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	//STATE 1 = MQ-3 Input State
-	if (state == 1)
-	{
-		if (button1Down == 1)
-		{
-			val = analogRead(analogPin);
-			if (val < 50)
-			{
-				colorValue = 0;
-			}
-			else if (val < 125)
-			{
-				colorValue = 1;
-			}
-			else if (val < 250) 			{ 				colorValue = 2; 			} 			else 			{ 				colorValue = 3; 			} 			 			//Strange Variable names to reuse those variables written below.   			if (colorValue != i) 			{ 				lastDebounceColorTime = millis(); 			} 			i = colorValue; 			if ((millis() - lastDebounceColorTime) > debounceColorDelay)
-			{
-				switch(colorValue)
-				{
-				case 0:
-					rgbConversion(0, 162, 232, clockPin, latchPin, dataPin); //Light Blue
-					break;
-				case 1:
-					rgbConversion(0, 255, 0, clockPin, latchPin, dataPin); //Green
+//Actual Use
+int analogPin = A0;
+int buttonPin = 4;
+int statePin = 3;
+//Control Variables
+int state = 0;
+int colorValue = 0;
+int newState = 0;
+//Misc Use Variables (Sequences and counts)
+int i = 0;
+int j = 0;
+//Debounce
+int button1Reading = 0;
+int lastButton1State = 1; //Start high because button sinks current
+long lastDebounce1Time = 0;
+long debounceDelay = 50;
+int button1Pressed = 1;
+int button1Down = 0;
+long lastDebounceColorTime = 0;
+long debounceColorDelay = 500;
+//LED
+int clockPin = 9;
+int enablePin = 8;
+int latchPin = 7;
+int dataPin = 6;
 
-					break;
-				case 2:
-					rgbConversion(128, 0, 128, clockPin, latchPin, dataPin); //Purple
+void setup() {
+  pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(statePin, INPUT_PULLUP);
+  if (digitalRead(statePin) == HIGH) {
+    state = 0;
+  } else {
+    state = 1;
+  }
+  pinMode(dataPin, OUTPUT);
+  pinMode(clockPin, OUTPUT);
+  pinMode(enablePin, OUTPUT);
+  pinMode(latchPin, OUTPUT);
+  digitalWrite(dataPin, LOW);
+  digitalWrite(clockPin, LOW);
+  digitalWrite(enablePin, LOW);
+  digitalWrite(latchPin, LOW);
+  reset(clockPin, latchPin, dataPin);
+  rgbConversion(255, 255, 255, clockPin, latchPin, dataPin);
+}
+int val = 0;
+void loop() {
+  button1Reading = digitalRead(buttonPin);
+  if (button1Reading != lastButton1State) {
+    lastDebounce1Time = millis();
+  }
+  if ((millis() - lastDebounce1Time) > debounceDelay) {
+    button1Pressed = button1Reading;
+  }
+  lastButton1State = button1Reading;
+  if (button1Pressed == LOW) { //LOW = Pressed.  Sinks current
+    if (button1Down == 0) {
+      button1Down = 1;
+      if (state == 0) {
+        newState = 1;
+        colorValue = colorValue + 1;
+      }
+    }
+  } else {
+    button1Down = 0;
+  }
 
-					break;
-				case 3:
-					rgbConversion(255, 0, 0, clockPin, latchPin, dataPin); //Red
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  //STATE 1 = MQ-3 Input State
+  if (state == 1) {
+    if (button1Down == 1) {
+      val = analogRead(analogPin);
+      if (val < 50) {
+        colorValue = 0;
+      } else if (val < 125) {
+        colorValue = 1;
+      } else if (val < 250) {
+        colorValue = 2;
+      } else {
+        colorValue = 3;
+      }
+      //Strange Variable names to reuse those variables written below.
+      if (colorValue != i) {
+        lastDebounceColorTime = millis();
+      }
+      i = colorValue;
+      if ((millis() - lastDebounceColorTime) > debounceColorDelay) {
+        switch(colorValue) {
+          case 0:
+            rgbConversion(0, 162, 232, clockPin, latchPin, dataPin); //Light Blue
+            break;
+          case 1:
+            rgbConversion(0, 255, 0, clockPin, latchPin, dataPin); //Green
+            break;
+          case 2:
+            rgbConversion(128, 0, 128, clockPin, latchPin, dataPin); //Purple
+            break;
+          case 3:
+            rgbConversion(255, 0, 0, clockPin, latchPin, dataPin); //Red
+            break;
+        }
+        //Force Reset of Timer
+        i = i + 50;
+      }
+    }
+  } else {
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
-					break;
-				}
+    if (newState == 1) {
 
-				//Force Reset of Timer
-				i = i + 50;
-			}
-
-		}
-	}
-	else
-	{
-		///////////////////////////////////////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////////////////////////////////////////////////
-
-		if (newState == 1)
-		{
-
-			if (colorValue > 18)
-			{
-				colorValue = 0;
-			}
-			switch(colorValue) {
-			case 0:
-				rgbConversion(255, 255, 255, clockPin, latchPin, dataPin); //White
-				break;
-			case 1:
-				rgbConversion(255, 0, 0, clockPin, latchPin, dataPin);  //Red
-				break;
-			case 2:
-				rgbConversion(0, 255, 0, clockPin, latchPin, dataPin); //Green
-				break;
-			case 3:
-				rgbConversion(0, 0, 255, clockPin, latchPin, dataPin); //Blue
-				break;
-			case 4:
-				rgbConversion(0, 0, 0, clockPin, latchPin, dataPin); //Off
-				break;
-			case 5:
-				rgbConversion(255, 174, 201, clockPin, latchPin, dataPin); //Rose
-				break;
-			case 6:
-				rgbConversion(255, 255, 0, clockPin, latchPin, dataPin); //Yellow
-				break;
-			case 7:
-				rgbConversion(255, 128, 0, clockPin, latchPin, dataPin); //Orange
-				break;
-			case 8:
-				rgbConversion(200, 191, 231, clockPin, latchPin, dataPin); //Lavendar
-				break;
-			case 9:
-				rgbConversion(163, 73, 164, clockPin, latchPin, dataPin); //Purple
-				break;
-			case 10:
-				rgbConversion(0, 176, 240, clockPin, latchPin, dataPin); //Light Blue
-				break;
-			case 11:
-				rgbConversion(102, 51, 0, clockPin, latchPin, dataPin); //Brown
-				break;
-			default: //Pulse Options
-				i = 255;
-				j = 0;
-				break;
-			}
-
-			newState = 0;
-		}
-		if (colorValue > 11)
-		{
-			if (j == 0)
-			{
-				i = i - 1;
-				if (i < 0) 				{ 					i = 0; 					j = 1; 				} 			} 			else 			{ 				i = i + 1; 				if (i > 255)
-				{
-					i = 255;
-					j = 0;
-				}
-			}
-			switch(colorValue) {
-			case 12:
-				rgbConversion(i, 0, 0, clockPin, latchPin, dataPin); //Red
-				break;
-			case 13:
-				rgbConversion(0, i, 0, clockPin, latchPin, dataPin); //Green
-				break;
-			case 14:
-				rgbConversion(0, 0, i, clockPin, latchPin, dataPin); //Blue
-				break;
-			case 15:
-				rgbConversion(i, i, 0, clockPin, latchPin, dataPin); //Yellow
-				break;
-			case 16:
-				rgbConversion(i, 0, i, clockPin, latchPin, dataPin); //Purple
-				break;
-			case 17:
-				rgbConversion(0, i, i, clockPin, latchPin, dataPin); //Light Blue
-				break;
-			case 18:
-				rgbConversion(i, i, i, clockPin, latchPin, dataPin); //White
-				break;
-			}
-		}
-	}
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////
-
+      if (colorValue > 18) {
+        colorValue = 0;
+      }
+      switch(colorValue) {
+        case 0:
+          rgbConversion(255, 255, 255, clockPin, latchPin, dataPin); //White
+          break;
+        case 1:
+          rgbConversion(255, 0, 0, clockPin, latchPin, dataPin);  //Red
+          break;
+        case 2:
+          rgbConversion(0, 255, 0, clockPin, latchPin, dataPin); //Green
+          break;
+        case 3:
+          rgbConversion(0, 0, 255, clockPin, latchPin, dataPin); //Blue
+          break;
+        case 4:
+          rgbConversion(0, 0, 0, clockPin, latchPin, dataPin); //Off
+          break;
+        case 5:
+          rgbConversion(255, 174, 201, clockPin, latchPin, dataPin); //Rose
+          break;
+        case 6:
+          rgbConversion(255, 255, 0, clockPin, latchPin, dataPin); //Yellow
+          break;
+        case 7:
+          rgbConversion(255, 128, 0, clockPin, latchPin, dataPin); //Orange
+          break;
+        case 8:
+          rgbConversion(200, 191, 231, clockPin, latchPin, dataPin); //Lavendar
+          break;
+        case 9:
+          rgbConversion(163, 73, 164, clockPin, latchPin, dataPin); //Purple
+          break;
+        case 10:
+          rgbConversion(0, 176, 240, clockPin, latchPin, dataPin); //Light Blue
+          break;
+        case 11:
+          rgbConversion(102, 51, 0, clockPin, latchPin, dataPin); //Brown
+          break;
+        default: //Pulse Options
+          i = 255;
+          j = 0;
+          break;
+      }
+      newState = 0;
+    }
+    if (colorValue > 11) {
+      if (j == 0)
+      {
+        i = i - 1;
+        if (i < 0) {
+          i = 0;
+          j = 1;
+        }
+      } else {
+        i = i + 1;
+        if (i > 255) {
+          i = 255;
+          j = 0;
+        }
+      }
+      switch(colorValue) {
+        case 12:
+          rgbConversion(i, 0, 0, clockPin, latchPin, dataPin); //Red
+          break;
+        case 13:
+          rgbConversion(0, i, 0, clockPin, latchPin, dataPin); //Green
+          break;
+        case 14:
+          rgbConversion(0, 0, i, clockPin, latchPin, dataPin); //Blue
+          break;
+        case 15:
+          rgbConversion(i, i, 0, clockPin, latchPin, dataPin); //Yellow
+          break;
+        case 16:
+          rgbConversion(i, 0, i, clockPin, latchPin, dataPin); //Purple
+          break;
+        case 17:
+          rgbConversion(0, i, i, clockPin, latchPin, dataPin); //Light Blue
+          break;
+        case 18:
+          rgbConversion(i, i, i, clockPin, latchPin, dataPin); //White
+          break;
+      }
+    }
+  }
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
 }
 ```
 
