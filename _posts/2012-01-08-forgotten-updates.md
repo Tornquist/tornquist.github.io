@@ -3,11 +3,6 @@ layout: post
 title: "Forgotten Updates"
 date: 2012-01-08 14:50:00
 categories: thought
-custom_css:
-- colorbox
-custom_js:
-- photoset-grid
-- colorbox
 ---
 
 I am truly awful at updating this blog.  I have all these great ideas and thoughts that I want to share, but I never get around to organizing them, or presenting any of the ideas in a manner that I want to share.
