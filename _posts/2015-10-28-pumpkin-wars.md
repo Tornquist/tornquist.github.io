@@ -34,7 +34,7 @@ this competition for quite awhile.
 When the official HERP DERP 2 logo came out (pictured below) I knew that
 we had to do something more than just lights and sound.
 
-![HERP DERP Banner](/assets/2015/10/herp_derp_banner.png)
+{% include photo.html img="/assets/2015/10/herp_derp_banner.png" %}
 
 The guidelines of the competition are simple: use an arduino or
 Raspberry Pi and make something cool.  After seeing the new [Star Wars
@@ -58,14 +58,14 @@ to be housed within the larger pumpkin, and for the head to just be
 impaled on a rotating dowel.  With this basic idea, Arnaud and I were
 able to build a simple frame the weekend before the competition:
 
-![Frame](/assets/2015/10/frame.jpg)
+{% include photo.html alt="Frame" img="/assets/2015/10/frame.jpg" %}
 
 The idea was simple.  A stepper motor with a belt would connect to the
 central shaft and rotate it.  This way we could have a large enough
 dowel to support a pumpkin, and we could
 still use a normal motor.
 
-![Frame and Motor](/assets/2015/10/frame_motor.jpg)
+{% include photo.html alt="Frame and Motor" img="/assets/2015/10/frame_motor.jpg" %}
 
 From there, the motor would connect to a h-bridge that was driven by a
 Raspberry Pi.  Instead of the Pi controlling the robot completely,
@@ -82,4 +82,4 @@ like the robot.  Once they were all painted and cleaned up we were able
 to put the pumpkins on the frame and see how it looked. I'd say they
 nailed it!
 
-![BB-8 Pumpkin](/assets/2015/10/bb8_pumpkin_combined.jpg)
+{% include photo.html alt="BB-8 Pumpkin" img="/assets/2015/10/bb8_pumpkin_combined.jpg" %}

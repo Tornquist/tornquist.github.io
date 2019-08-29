@@ -3,11 +3,6 @@ layout: post
 title: "Online Toolbox"
 date: 2015-05-01 03:24:00
 categories: programming
-custom_css:
-- colorbox
-custom_js:
-- photoset-grid
-- colorbox
 ---
 # Movement I - The Backstory:
 
@@ -67,10 +62,27 @@ Ever grateful, ever true.  All Hail to our old Gold and Black!
 
 Check out the Code: [Online Toolbox \| GitHub](https://github.com/Tornquist/onlinetoolbox)
 
-
 # Some Photos:
 
-{% include /galleries/2015-05-01-online-toolbox.html %}
+{% include photos.html
+  height="25" id="online-toolbox-1"
+  img1="/assets/2015/05/OnlineToolbox_2.png"
+  img2="/assets/2015/05/OnlineToolbox_3.png"
+%}
+{% include photos.html
+  height="13" id="online-toolbox-2"
+  img1="/assets/2015/05/OnlineToolbox_5.png"
+  img2="/assets/2015/05/OnlineToolbox_6.png"
+  img3="/assets/2015/05/OnlineToolbox_7.png"
+  img4="/assets/2015/05/OnlineToolbox_8.png"
+%}
+{% include photos.html
+  height="13" id="online-toolbox-3"
+  img1="/assets/2015/05/OnlineToolbox_9.png"
+  img2="/assets/2015/05/OnlineToolbox_10.png"
+  img3="/assets/2015/05/OnlineToolbox_11.png"
+  img4="/assets/2015/05/OnlineToolbox_12.png"
+%}
 
 # (Semi-Complete) Feature List:
 

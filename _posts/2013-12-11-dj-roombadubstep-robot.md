@@ -4,15 +4,11 @@ title: "DJ Roomba/Dubstep Robot"
 date: 2013-12-11 20:57:00
 categories: programming
 custom_css:
-- colorbox
 - youtube_embed
-custom_js:
-- photoset-grid
-- colorbox
 ---
 For ECE 362 (Microprocessor System Design and Interfacing) I had to design something socially redeeming with my HC9S12 Microcontroller. The original plan as the title implies was a robot that would drive around and play music at people. Plans were to create/3D print a Deadmau5 head (below) and mount screens in it that would change based on the song playing and the robot's motions. An array of IR Proximity sensors would be used to detect movement so that the robot could follow a moving object.
 
-![DJ Roomba CAD Head](/assets/2013/12/djroomba/head.jpg)
+{% include photo.html alt="DJ Roomba CAD Head" img="/assets/2013/12/djroomba/head.jpg" %}
 
 My partner, Mark, designed the speaker system. We had a small speaker that we had connected to our board and we were controlling it using PWM. Instead of having songs pre-recorded, we generated it on the fly based on hard coded note arrays. Each array corresponded to a particular song, and based on the note a sing wave would be played by stepping through an array of pre-calculated sine wave values at different step sizes.
 
@@ -26,7 +22,18 @@ It was disappointing to give up the robot idea, but by changing focus we were st
 
 # Gallery:
 
-{% include /galleries/2013-12-11-dj-roombadubstep-robot.html %}
+{% include photos.html
+  height="30" id="dj-roombadubstep-robot-1"
+  img1="/assets/2013/12/djroomba/on.jpg"
+  img2="/assets/2013/12/djroomba/inside.jpg"
+%}
+{% include photos.html
+  height="17" id="dj-roombadubstep-robot-2"
+  img1="/assets/2013/12/djroomba/breadboard.jpg"
+  img2="/assets/2013/12/djroomba/schematic.png"
+  img3="/assets/2013/12/djroomba/pcb.jpg"
+  img4="/assets/2013/12/djroomba/side.jpg"
+%}
 
 # Demo:
 

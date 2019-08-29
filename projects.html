@@ -1,0 +1,24 @@
+---
+layout: blank
+title: Projects
+permalink: /projects/
+section_id: portfolio
+section_class: bg-light-gray
+---
+
+<section>
+  <h1>{{ page.title }}</h1>
+</section>
+
+<section>
+  {% assign sorted_projects = site.projects | sort: 'rel_sort' | reverse %}
+  <ul class='archives'>
+    {% for project in sorted_projects %}
+      <li>
+        <a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
+        &#183;
+        <span>{{ project.release }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

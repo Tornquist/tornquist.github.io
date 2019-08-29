@@ -1,15 +1,12 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <ul class="nav navbar-nav">
-      <li><a href="{{ site.baseurl }}/">{{ site.home_title }}</a></li>
-      {% for page in site.pages %}
-        {% if page.title %}
-          {% if page.ignore != true %}
-            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </div>
-</nav>
+<header>
+  {% if page.url != "/" %}<a href="/">{% endif %}
+  <h1>Nathan Tornquist.com</h1>
+  {% if page.url != "/" %}</a>{% endif %}
+  {% comment %}
+  Whitespace in ul/li trees will be rendered. This is harder to read, but allows
+  the styles to actually control all of the padding.
+  {% endcomment %}
+  <nav>
+    <ul><li><a href="{{ site.baseurl }}/">{{ site.home_title }}</a></li>{% for page in site.pages %}{% if page.title %}{% if page.ignore != true %}<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>{% endif %}{% endif %}{% endfor %}</ul>
+  </nav>
+</header>

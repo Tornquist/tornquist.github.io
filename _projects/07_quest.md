@@ -1,20 +1,13 @@
 ---
 slug: quest
 layout: project
-promo_image: quest.png
-feature_image: quest_full.png
-promo_description: Digital Scavenger Hunt
 title: Quest
-subtitle: ECE477 Senior Design
 release: June 2017
 featured: true
-rel_sort: 41
+rel_sort: 70
 custom_css:
-- colorbox
 - youtube_embed
-custom_js:
-- photoset-grid
-- colorbox
+- syntax
 ---
 
 {% for post in site.posts %}

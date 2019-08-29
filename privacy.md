@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blank
 title: Privacy
 permalink: /privacy/
 redirect_to: /

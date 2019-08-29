@@ -1,18 +1,12 @@
 ---
 slug: ludum-dare-42
 layout: project
-promo_image: ld42.png
-feature_image: ld42.png
-promo_description: Ludum Dare 42
 title: "Ludum Dare 42: Running out of Space"
-release: Aug 2018
-rel_sort: 41
+release: August 2018
+rel_sort: 90
 custom_css:
-- colorbox
 - youtube_embed
-custom_js:
-- photoset-grid
-- colorbox
+- syntax
 ---
 
 {% for post in site.posts %}

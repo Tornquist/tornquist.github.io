@@ -1,0 +1,37 @@
+<div class="photos" id="{{include.id}}">
+  {% if include.img1 %}
+    <div class="photo">
+      <img src="{{ include.img1 }}">
+    </div>
+  {% endif %}
+  {% if include.img2 %}
+    <div class="photo">
+      <img src="{{ include.img2 }}">
+    </div>
+  {% endif %}
+  {% if include.img3 %}
+    <div class="photo">
+      <img src="{{ include.img3 }}">
+    </div>
+  {% endif %}
+  {% if include.img4 %}
+    <div class="photo">
+      <img src="{{ include.img4 }}">
+    </div>
+  {% endif %}
+  {% if include.img5 %}
+    <div class="photo">
+      <img src="{{ include.img5 }}">
+    </div>
+  {% endif %}
+  <style>
+    #{{include.id}} {
+      height: calc(var(--page-width) * 0.{{include.height}});
+    }
+    @media only screen and (max-width: 632px) {
+      #{{include.id}} {
+        height: calc({{include.height}}vw - 16px);
+      }
+    }
+  </style>
+</div>

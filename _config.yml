@@ -1,48 +1,27 @@
-gems:
-    - jekyll-redirect-from
+plugins:
+  - jekyll-redirect-from
 
 # Site settings
 title: Nathan Tornquist.com
 name: Nathan Tornquist
 author: Nathan Tornquist
-email: nathan@tornqu.ist
-description: > # this means to ignore newlines until "baseurl:"
+email: contact@tornquist.me
+description: >
   Nathan Tornquist's personal website: a collection of projects and essays.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://nathantornquist.com" # the base hostname & protocol for your site
-twitter_username: nathantornquist
-github_username:  tornquist
+baseurl: ""
+url: "http://nathantornquist.com"
 permalink: /blog/:year/:month/:title/
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 
 # Site Variables
 home_title: Home
 
-milestones_heading: Professional Milestones
-milestones_subheading: A Brief History of Where I've Been
-
-welcome_small: Hi, I'm Nathan
-welcome_big: I'm an Engineer
-welcome_image: nathan.png
-welcome_button_text: Learn About Me
-
-contact_heading: Contact Me
-contact_subheading: I'd love to hear from you
-
-biography_heading: Who I Am
-biography_subheading: I'd like to tell you about myself.
-
 copyright: Copyright &copy; Nathan Tornquist 2010-2019
 
 collections:
-  biographies:
-    output: false
-  milestones:
-    output: false
-  contact_links:
-    output: false
   projects:
     output: true
     permalink: /projects/:title/

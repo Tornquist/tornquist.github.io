@@ -4,6 +4,7 @@ title: "Petronic Arts: Idea to Reality"
 date: 2012-02-15 17:29:00
 categories: thought
 ---
+
 This morning I put *Solo Pong* on the Android Market, after registering as an Android Developer under the name *Petronic Arts* yesterday.  *Petronic Arts* has been a "company" a long time in the making.  Dating back to my 6th grade year in fact.  6th grade was when I started writing software.  I felt that I would make millions a lot faster writing epic video games than making websites.  Unfortunately it hasn't happened yet in either medium.
 
 Anyway, in 6th grade I formed *Xenex Games* with Michael Betz, a good friend of mine and very talented composer.  You can sample some of his work [here](http://michaelbetzmusic.com/).   Anyway, we started learning how to program in Blitz Basic.  Before long we had a "falling out," or as much of a falling out as 6th graders could have within their small business (we stayed great friends.)  He moved to music and I stuck with software.  There was no way that either of us had the rights to the whole company, so new ones needed to be formed.  With that I started using the name *Petronic Arts*.  The logos associated with *Petronic Arts* were used the most heavily during my development on the Microsoft Zune with *Arcade Classics*.  However, I released everything under my name instead of hiding behind a company front.

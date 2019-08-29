@@ -4,6 +4,7 @@ title: "Pathfinding and Politics"
 date: 2012-04-02 18:53:00
 categories: thought
 ---
+
 This post will cover two very different topics.  If you could care less about programming or any of my projects, you might as well scroll down to the next topic in this post or close the web browser completely.
 
 # Pathfinding
