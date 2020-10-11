@@ -2,7 +2,7 @@
 slug: macropad
 layout: project
 title: Macropad
-release: July 2018
+release: July 2019
 rel_sort: 100
 ---
 
