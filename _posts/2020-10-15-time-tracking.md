@@ -36,7 +36,7 @@ platform][0] for SkinIO with the goal of pivoting and saving the company.
 
 Long story short, _there was some stuff going on._
 
-Aug. 2nd was the last day I tracked in both Time and [Tyme][1], and when I decided
+Aug. 2nd was the last day I tracked in both _Time_ and _[Tyme][1]_, and when I decided
 to fully commit to the new platform that I am building. I had just wrapped up
 a major [styling update][2] that I had started on Feb. 22nd (right before the world
 changed), and the app was finally complete enough that I could use it to track
