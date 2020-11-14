@@ -27,8 +27,17 @@ The project currently consists of the following repositories:
 * [Time-API][4]
 * [Time-Core][5]
 
+I have written about this project in these posts:
+
+* [Time Tracking][6]
+* [Is my timer running?][7]
+* [Building a Realtime Widget][8]
+
 [1]: {% post_url 2018-02-11-2017-work-analysis %}
 [2]: http://feltron.com
 [3]: https://github.com/Tornquist/Time-Client
 [4]: https://github.com/Tornquist/Time-API
 [5]: https://github.com/Tornquist/Time-Core
+[6]: {% post_url 2020-10-15-time-tracking %}
+[7]: {% post_url 2020-10-17-is-my-timer-running %}
+[8]: {% post_url 2020-10-18-building-a-realtime-widget %}
