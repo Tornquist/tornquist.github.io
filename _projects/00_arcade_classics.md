@@ -63,9 +63,8 @@ that Arcade Classics stands alongside the other work.
   img4="/assets/images/projects/arcade_classics/arcade_classics_7.png"
 %}
 
-Check out the original thread on [Zune
-Boards](http://www.zuneboards.com/forums/showthread.php?t=31892)
+Check out (an archived copy) of the original thread on [Zune Boards][1].
 
-[1]: https://www.zuneboards.com/beta-arcade-classics-t30233.html
+[1]: /assets/archives/zuneboards
 [2]: {% link _projects/01_solo_defense.md %}
 [3]: https://www.reddit.com/r/zune
