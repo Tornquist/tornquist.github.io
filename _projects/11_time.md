@@ -32,6 +32,7 @@ I have written about this project in these posts:
 * [Time Tracking][6]
 * [Is my timer running?][7]
 * [Building a Realtime Widget][8]
+* [SwiftUI as a Design Tool][9]
 
 [1]: {% post_url 2018-02-11-2017-work-analysis %}
 [2]: http://feltron.com
@@ -41,3 +42,4 @@ I have written about this project in these posts:
 [6]: {% post_url 2020-10-15-time-tracking %}
 [7]: {% post_url 2020-10-17-is-my-timer-running %}
 [8]: {% post_url 2020-10-18-building-a-realtime-widget %}
+[9]: {% post_url 2021-05-16-swiftui-as-a-design-tool %}
