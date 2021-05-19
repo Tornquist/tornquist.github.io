@@ -155,7 +155,7 @@ more significant quality of life improvement than I expected. I am so happy with
 how this all worked out.
 
 {% include photos.html
-  height="70" id="quiet-home"
+  height="auto" id="quiet-home"
   img1="/assets/2020/08/homekit-switch.png"
   img2="/assets/2020/08/shortcut-quick-action.png"
   img3="/assets/2020/08/shortcut-automation.png"

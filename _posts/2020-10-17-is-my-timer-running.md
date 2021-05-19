@@ -100,7 +100,7 @@ Things 3 is great inspiration for guidance on complex tree views, in-line
 interactions and incredible design all-around.
 
 {% include photos.html
-  height="99" id="is-my-timer-running-1"
+  height="auto" id="is-my-timer-running-1"
   img1="/assets/2020/10/inspiration-health.png"
   img2="/assets/2020/10/inspiration-reminders.png"
 %}
@@ -130,7 +130,7 @@ originally, and on the right you can see the "final" UI designed to meet the mos
 important UX items.
 
 {% include photos.html
-  height="99" id="is-my-timer-running-2"
+  height="auto" id="is-my-timer-running-2"
   img1="/assets/2020/10/time-starting-ui.png"
   img2="/assets/2020/10/time-final-ui.png"
 %}
@@ -228,7 +228,7 @@ timers are a **single click**. This is a drastic reduction from the average of
 three clicks before.
 
 {% include photos.html
-  height="99" id="is-my-timer-running-7"
+  height="auto" id="is-my-timer-running-7"
   img1="/assets/2020/10/time-categories-light.png"
   img2="/assets/2020/10/time-categories-dark.png"
 %}
@@ -251,13 +251,13 @@ time within the app.
 This is what the complete interface looks like when I launch the app:
 
 {% include photos.html
-  height="99" id="is-my-timer-running-8"
+  height="auto" id="is-my-timer-running-8"
   img1="/assets/2020/10/time-stopped-light.png"
   img2="/assets/2020/10/time-running-light.png"
 %}
 
 {% include photos.html
-  height="99" id="is-my-timer-running-9"
+  height="auto" id="is-my-timer-running-9"
   img1="/assets/2020/10/time-stopped-dark.png"
   img2="/assets/2020/10/time-running-dark.png"
 %}

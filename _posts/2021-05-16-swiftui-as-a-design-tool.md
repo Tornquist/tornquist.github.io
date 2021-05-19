@@ -52,7 +52,7 @@ forced pages where I could indicate what and how a destructive action would work
 The limitations of SwiftUI forced careful evaluation that took me from:
 
 {% include photos.html
-  height="70" id="time-before"
+  height="auto" id="time-before"
   img1="/assets/2021/05/time-category-menu-before.png"
   img2="/assets/2021/05/time-category-delete-before.png"
   img3="/assets/2021/05/time-edit-entry-before.png"
@@ -62,7 +62,7 @@ The limitations of SwiftUI forced careful evaluation that took me from:
 to this refreshed UI:
 
 {% include photos.html
-  height="70" id="time-after"
+  height="auto" id="time-after"
   img1="/assets/2021/05/time-category-menu-after.png"
   img2="/assets/2021/05/time-category-delete-after.png"
   img3="/assets/2021/05/time-edit-entry-after.png"

@@ -25,6 +25,8 @@
     </div>
   {% endif %}
   <style>
+    {% if include.height == "auto" %}
+    {% else %}
     #{{include.id}} {
       height: calc(var(--page-width) * 0.{{include.height}});
     }
@@ -33,5 +35,6 @@
         height: calc({{include.height}}vw - 16px);
       }
     }
+    {% endif %}
   </style>
 </div>

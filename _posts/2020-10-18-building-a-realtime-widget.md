@@ -25,7 +25,7 @@ lights up green and the timer counts up by the second. It's nice to hit the star
 button, see the UI light up, and then see the timer start to roll.
 
 {% include photos.html
-  height="33" id="building-a-realtime-widget-1"
+  height="auto" id="building-a-realtime-widget-1"
   img1="/assets/2020/10/time-metrics-stopped-dark.png"
   img2="/assets/2020/10/time-metrics-running-dark.png"
 %}
@@ -213,7 +213,7 @@ straightforward to reason about.
 Popping over to Xcode I tested this same view within a widget and saw:
 
 {% include photos.html
-  height="33" id="building-a-realtime-widget-2"
+  height="auto" id="building-a-realtime-widget-2"
   img1="/assets/2020/10/time-bad-frame.png"
   img2="/assets/2020/10/time-bad-frame-live.png"
   img3="/assets/2020/10/time-bad-frame-background.png"
@@ -284,7 +284,7 @@ it may happen if you're intentionally watching the values update on your home
 screen.
 
 {% include photos.html
-  height="34" id="building-a-realtime-widget-3"
+  height="auto" id="building-a-realtime-widget-3"
   img1="/assets/2020/10/time-rollover-small-1.png"
   img2="/assets/2020/10/time-rollover-small-2.png"
   img3="/assets/2020/10/time-rollover-small-3.png"
@@ -298,7 +298,7 @@ So there we go! An iOS 14 widget that tells me if my timers are running and upat
 every second.
 
 {% include photos.html
-  height="99" id="building-a-realtime-widget-4"
+  height="auto" id="building-a-realtime-widget-4"
   img1="/assets/2020/10/time-homescreen-stopped.jpg"
   img2="/assets/2020/10/time-homescreen-running.jpg"
 %}
