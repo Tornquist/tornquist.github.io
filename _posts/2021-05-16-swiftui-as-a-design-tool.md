@@ -51,22 +51,27 @@ forced pages where I could indicate what and how a destructive action would work
 
 The limitations of SwiftUI forced careful evaluation that took me from:
 
-{% include photos.html
-  height="auto" id="time-before"
-  img1="/assets/2021/05/time-category-menu-before.png"
-  img2="/assets/2021/05/time-category-delete-before.png"
-  img3="/assets/2021/05/time-edit-entry-before.png"
-%}
+{% comment %}
+!@ generate_image assets/2021/05/time-before.png
+  assets/2021/05/time-category-menu-before.png
+  assets/2021/05/time-category-delete-before.png
+  assets/2021/05/time-edit-entry-before.png
+!@ end_generate
+{% endcomment %}
 
+{% include photo.html alt="Time Before" img="/assets/2021/05/time-before.png" %}
 
 to this refreshed UI:
 
-{% include photos.html
-  height="auto" id="time-after"
-  img1="/assets/2021/05/time-category-menu-after.png"
-  img2="/assets/2021/05/time-category-delete-after.png"
-  img3="/assets/2021/05/time-edit-entry-after.png"
-%}
+{% comment %}
+!@ generate_image assets/2021/05/time-after.png
+  assets/2021/05/time-category-menu-after.png
+  assets/2021/05/time-category-delete-after.png
+  assets/2021/05/time-edit-entry-after.png
+!@ end_generate
+{% endcomment %}
+
+{% include photo.html alt="Time After" img="/assets/2021/05/time-after.png" %}
 
 The animations are smoother, the actions are clearer, and the entire project
 is much more pleasant to use. By bending to what SwiftUI allowed, I've created
