@@ -29,4 +29,4 @@ collections:
     output: true
     permalink: /privacy/:title/
 
-exclude: [temp, scripts]
+exclude: [temp, scripts, .github]
