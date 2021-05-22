@@ -308,8 +308,8 @@ every second.
 
 {% comment %}
 !@ generate_image assets/2020/10/time-homescreen.png
-  assets/2020/10/time-homescreen-stopped.jpg
-  assets/2020/10/time-homescreen-running.jpg
+  assets/2020/10/time-homescreen-stopped.png
+  assets/2020/10/time-homescreen-running.png
 !@ end_generate
 {% endcomment %}
 
