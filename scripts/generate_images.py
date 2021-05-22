@@ -2,6 +2,7 @@
 import os
 import re
 import shutil
+from enum import Enum
 
 from ImageMagick import ImageMagick
 
@@ -34,6 +35,25 @@ def list_all_files(folders):
   files = [list_files(dir) for dir in folders]
   files = [item for sublist in files for item in sublist]
   return files
+
+def progress_bar_if_configured(text, count):
+  try:
+    import progressbar
+
+    widgets = [
+      '{}: '.format(text),
+      progressbar.Percentage(),
+      ' ', progressbar.Bar(),
+      ' ', progressbar.ETA(),
+    ]
+
+    bar = progressbar.ProgressBar(widgets=widgets,
+                                  max_value=count,
+                                  redirect_stdout=True).start()
+  except ImportError:
+    bar = None
+
+  return bar
 
 ### Parsing Helpers
 
@@ -94,14 +114,25 @@ def calculate_padding(num_images, true_image_width, page_size, image_gap):
   padding = round(int(true_image_width) / displayed_image_size * image_gap)
   return padding
 
-def generate(output, images, page_size, image_gap):
+def generate(output, images, page_size, image_gap, bar = None):
   num_images = len(images)
+
+  class Result(Enum):
+    REPLACED  = 'Replaced '
+    GENERATED = 'Generated'
+    SKIPPED   = 'Skipped  '
+    NO_CHANGE = 'No change'
+
+  def log(result, message = ''):
+    print('  [ {} ] {} {}'.format(result.value, output, message))
 
   # Ensure images are the same size.
   # This allows images to be directly chained (no zooming, scaling, etc)
   same_size, (width, height) = ImageMagick.check_same_size(images)
   if not same_size:
-    print('Skipping {}. Inconsistent image size'.format(request))
+    log(Result.SKIPPED, 'Inconsistent image size')
+    if bar is not None: bar += 1
+    return
 
   # Identify if an image has been generated previously (enable compare logic)
   destination_exists = os.path.exists(request)
@@ -110,41 +141,51 @@ def generate(output, images, page_size, image_gap):
   # Calculate padding in pixel space of images (for consistent scaled display)
   padding = calculate_padding(len(images), width, page_size, image_gap)
 
-  print('  Generating', request)
   ImageMagick.generate(images, padding, destination)
 
   if destination_exists:
-    print('  Comparing', request)
     try:
       ImageMagick.compare(temp_image_path, request)
+      log(Result.NO_CHANGE)
     except Exception as e:
-      print('  Replacing', request)
+      log(Result.REPLACED)
       shutil.copyfile(temp_image_path, request)
+  else:
+    log(Result.GENERATED)
 
-print("Scanning for image requests")
+  if bar is not None: bar += 1
 
-files = list_all_files(SEARCH_FOLDERS)
-requests = identify_all_requests(files)
+### Main Process
 
-if len(requests) == 0:
-  print('No requests found')
-  quit()
+if __name__ == "__main__":
+  # Identify all requests
+  print("Scanning for image requests")
 
-print('Identifying page width')
-page_size = find_style_in_file(STYLESHEET, PAGE_WIDTH_REGEX)
-image_gap = find_style_in_file(STYLESHEET, IMAGE_GAP_REGEX)
+  files = list_all_files(SEARCH_FOLDERS)
+  requests = identify_all_requests(files)
 
-if page_size is None:
-  print('Page width not found')
-  quit()
-if image_gap is None:
-  print('Using default gap size')
-  image_gap = 6;
+  if len(requests) == 0:
+    print('No requests found')
+    quit()
 
-print('Generating images')
+  # Identify destination
+  page_size = find_style_in_file(STYLESHEET, PAGE_WIDTH_REGEX)
+  image_gap = find_style_in_file(STYLESHEET, IMAGE_GAP_REGEX)
 
-ensure_dir_exists(TEMP_DIR)
-temp_image_path = '{}/image.out'.format(TEMP_DIR)
+  if page_size is None:
+    print('Error: Page width not found')
+    quit()
+  if image_gap is None:
+    print('Note: Using default gap size')
+    image_gap = 6;
 
-for request in requests:
-  generate(request, requests[request], page_size, image_gap)
+  # Configure directory
+  ensure_dir_exists(TEMP_DIR)
+  temp_image_path = '{}/image.out'.format(TEMP_DIR)
+
+  # Generate all images
+  print('Generating images')
+  bar = progress_bar_if_configured('Generating', len(requests))
+  for request in requests:
+    generate(request, requests[request], page_size, image_gap, bar)
+  if bar is not None: bar.finish()
