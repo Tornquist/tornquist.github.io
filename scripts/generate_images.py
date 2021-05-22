@@ -1,67 +1,139 @@
 #!/usr/bin/env python
 import os
-import subprocess
 import re
 import shutil
 
-print("Scanning for image requests")
+from ImageMagick import ImageMagick
 
-posts = ['_posts/' + s for s in os.listdir('_posts')]
-projects = ['_projects/' + s for s in os.listdir('_projects')]
-files = posts + projects
+### Config
 
+# Operational
 START_KEY = '!@ generate_image '
 END_KEY = '!@ end_generate'
+TEMP_DIR = 'temp'
+SEARCH_FOLDERS = ['_posts', '_projects']
 
-requests = {}
+# CSS
+STYLESHEET = 'assets/styles/main.css'
+PAGE_WIDTH_REGEX = '^.*--page-width: ([0-9]+)px;$'
+IMAGE_GAP_REGEX = '^.*\.photo \+ \.photo { margin-left: ([0-9]+)px; }$'
+DEFAULT_IMAGE_GAP = 6
 
-for file in files:
-  with open(file, 'r') as fh:
+### Operational Helpers
+
+def ensure_dir_exists(dir):
+  try:
+    os.stat(dir)
+  except:
+    os.mkdir(dir)
+
+def list_files(dir):
+  return [dir + '/' + s for s in os.listdir(dir)]
+
+def list_all_files(folders):
+  files = [list_files(dir) for dir in folders]
+  files = [item for sublist in files for item in sublist]
+  return files
+
+### Parsing Helpers
+
+def identify_requests(lines):
+  engaged = False
+
+  outputFile = None
+  inputFiles = []
+
+  completeRequests = {}
+
+  for line in lines:
+    if line.startswith(START_KEY):
+      outputFile = line.replace(START_KEY, '').strip()
+      engaged = True if len(outputFile) > 3 else False
+    elif line.startswith(END_KEY):
+      if len(inputFiles) > 1:
+        completeRequests[outputFile] = inputFiles
+      engaged = False
+      outputFile = None
+      inputFiles = []
+    elif engaged:
+      inputFiles.append(line.strip())
+
+  return completeRequests
+
+def identify_all_requests(files):
+  requests = {}
+  for file in list_all_files(SEARCH_FOLDERS):
+    with open(file, 'r') as fh:
+      all_lines = fh.readlines()
+      file_requests = identify_requests(all_lines)
+      if len(file_requests) > 0:
+        print(' ', file, ':', len(file_requests))
+        requests = {**requests, **file_requests}
+  return requests
+
+### CSS Identification
+
+def find_style_in_file(file, style_regex):
+  with open(file) as fh:
     all_lines = fh.readlines()
-
-    engaged = False
-
-    output = None
-    inputs = []
-
-    found = 0
+    check = re.compile(style_regex)
 
     for line in all_lines:
-      if line.startswith(START_KEY):
-        output = line.replace(START_KEY, '').strip()
-        engaged = True if len(output) > 3 else False
-      elif line.startswith(END_KEY):
-        if len(inputs) > 1:
-          requests[output] = inputs
-          found = found + 1
-        engaged = False
-        output = None
-        inputs = []
-      elif engaged:
-        inputs.append(line.strip())
+      check_match = check.match(line)
+      if check_match is not None:
+        return int(check_match.group(1))
 
-    if found > 0:
-      print(' ', file, ':', found)
+  return None
+
+### Image Generation
+
+def calculate_padding(num_images, true_image_width, page_size, image_gap):
+  gaps = num_images - 1
+  total_gap = image_gap * gaps
+  displayed_image_size = (page_size - total_gap)/num_images
+  padding = round(int(true_image_width) / displayed_image_size * image_gap)
+  return padding
+
+def generate(output, images, page_size, image_gap):
+  num_images = len(images)
+
+  # Ensure images are the same size.
+  # This allows images to be directly chained (no zooming, scaling, etc)
+  same_size, (width, height) = ImageMagick.check_same_size(images)
+  if not same_size:
+    print('Skipping {}. Inconsistent image size'.format(request))
+
+  # Identify if an image has been generated previously (enable compare logic)
+  destination_exists = os.path.exists(request)
+  destination = request if not destination_exists else temp_image_path
+
+  # Calculate padding in pixel space of images (for consistent scaled display)
+  padding = calculate_padding(len(images), width, page_size, image_gap)
+
+  print('  Generating', request)
+  ImageMagick.generate(images, padding, destination)
+
+  if destination_exists:
+    print('  Comparing', request)
+    try:
+      ImageMagick.compare(temp_image_path, request)
+    except Exception as e:
+      print('  Replacing', request)
+      shutil.copyfile(temp_image_path, request)
+
+print("Scanning for image requests")
+
+files = list_all_files(SEARCH_FOLDERS)
+requests = identify_all_requests(files)
 
 if len(requests) == 0:
   print('No requests found')
   quit()
 
 print('Identifying page width')
-page_size = None
-image_gap = None
-with open('assets/styles/main.css') as fh:
-  all_lines = fh.readlines()
-  width_check = re.compile('^.*--page-width: ([0-9]+)px;$')
-  gap_check = re.compile('^.*\.photo \+ \.photo { margin-left: ([0-9]+)px; }$')
+page_size = find_style_in_file(STYLESHEET, PAGE_WIDTH_REGEX)
+image_gap = find_style_in_file(STYLESHEET, IMAGE_GAP_REGEX)
 
-  for line in all_lines:
-    width_match = width_check.match(line)
-    if width_match is not None:
-      page_size = int(width_match.group(1))
-    gap_match = gap_check.match(line)
-    if gap_match is not None:
-      image_gap = int(gap_match.group(1))
 if page_size is None:
   print('Page width not found')
   quit()
@@ -71,59 +143,8 @@ if image_gap is None:
 
 print('Generating images')
 
-try:
-  os.stat('temp')
-except:
-  os.mkdir('temp')
-temp_image_path = 'temp/image.out'
+ensure_dir_exists(TEMP_DIR)
+temp_image_path = '{}/image.out'.format(TEMP_DIR)
 
 for request in requests:
-  images = requests[request]
-  num_images = len(images)
-
-  widths = []
-  heights = []
-
-  for image in images:
-    get_image_size = "identify -ping -format '%w %h' {}".format(image)
-    image_size = subprocess.check_output(get_image_size, shell=True)
-    [width, height] = image_size.decode('utf-8').split(' ')
-    widths.append(width)
-    heights.append(height)
-
-  if len(set(widths)) != 1 or len(set(heights)) != 1:
-    print('Skipping {}. Inconsistent image size'.format(request))
-
-  destination_exists = os.path.exists(request)
-  destination = request if not destination_exists else temp_image_path
-
-  gaps = len(images) - 1
-  total_gap = image_gap * gaps
-  displayed_image_size = (page_size - total_gap)/num_images
-  true_image_size = widths[0]
-  padding = round(int(true_image_size) / displayed_image_size * image_gap)
-  generate_command = """
-  convert \
-    {source_images} \
-    -background none \
-    -splice {padding}x0+0+0 \
-    +append \
-    -chop {padding}x0+0+0 \
-    {destination}
-  """.format(**{
-    'source_images': ' '.join(images),
-    'padding': str(padding),
-    'destination': destination
-  })
-
-  print('  Generating', request)
-  subprocess.run(generate_command, shell=True, check=True)
-
-  if destination_exists:
-    print('  Comparing', request)
-    compare_command = "compare -metric AE {} {} null: 2>&1".format(temp_image_path, request)
-    try:
-      subprocess.run(compare_command, shell=True, check=True)
-    except Exception as e:
-      print('  Replacing', request)
-      shutil.copyfile(temp_image_path, request)
+  generate(request, requests[request], page_size, image_gap)
