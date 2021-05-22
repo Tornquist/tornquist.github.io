@@ -99,11 +99,14 @@ For extensions to this design pattern I'm primarily looking at [Things 3][1].
 Things 3 is great inspiration for guidance on complex tree views, in-line
 interactions and incredible design all-around.
 
-{% include photos.html
-  height="auto" id="is-my-timer-running-1"
-  img1="/assets/2020/10/inspiration-health.png"
-  img2="/assets/2020/10/inspiration-reminders.png"
-%}
+{% comment %}
+!@ generate_image assets/2020/10/inspiration.png
+  assets/2020/10/inspiration-health.png
+  assets/2020/10/inspiration-reminders.png
+!@ end_generate
+{% endcomment %}
+
+{% include photo.html img="/assets/2020/10/inspiration.png" %}
 
 Health and Reminders bring a few critical concepts including live metrics on
 the landing page, a clear flow of navigation, and in-line folders.
@@ -129,11 +132,14 @@ On the left you can see the UI that was built as I worked through the data layer
 originally, and on the right you can see the "final" UI designed to meet the most
 important UX items.
 
-{% include photos.html
-  height="auto" id="is-my-timer-running-2"
-  img1="/assets/2020/10/time-starting-ui.png"
-  img2="/assets/2020/10/time-final-ui.png"
-%}
+{% comment %}
+!@ generate_image assets/2020/10/time-before-after-ui.png
+  assets/2020/10/time-starting-ui.png
+  assets/2020/10/time-final-ui.png
+!@ end_generate
+{% endcomment %}
+
+{% include photo.html img="/assets/2020/10/time-before-after-ui.png" %}
 
 <br/>
 
@@ -183,33 +189,41 @@ comes together. I wanted to provide quick access to:
 * All categories
 * Other settings data.
 
-{% include photos.html
-  height="33" id="is-my-timer-running-3"
-  img1="/assets/2020/10/time-metrics-stopped-light.png"
-  img2="/assets/2020/10/time-metrics-running-light.png"
-%}
+{% comment %}
+!@ generate_image assets/2020/10/time-metrics-start-stop-light.png
+  assets/2020/10/time-metrics-stopped-light.png
+  assets/2020/10/time-metrics-running-light.png
+!@ end_generate
 
-{% include photos.html
-  height="33" id="is-my-timer-running-4"
-  img1="/assets/2020/10/time-metrics-stopped-dark.png"
-  img2="/assets/2020/10/time-metrics-running-dark.png"
-%}
+!@ generate_image assets/2020/10/time-metrics-start-stop-dark.png
+  assets/2020/10/time-metrics-stopped-dark.png
+  assets/2020/10/time-metrics-running-dark.png
+!@ end_generate
+{% endcomment %}
+
+{% include photo.html img="/assets/2020/10/time-metrics-start-stop-light.png" %}
+
+{% include photo.html img="/assets/2020/10/time-metrics-start-stop-dark.png" %}
 
 Metrics take the front and center position at the top of the screen on-launch.
 **Green means go.** This block immediately shows which timer or timers are running
 and beings to answer basic usage questions.
 
-{% include photos.html
-  height="47" id="is-my-timer-running-5"
-  img1="/assets/2020/10/time-recents-stopped-light.png"
-  img2="/assets/2020/10/time-recents-running-light.png"
-%}
+{% comment %}
+!@ generate_image assets/2020/10/time-recents-start-stop-light.png
+  assets/2020/10/time-recents-stopped-light.png
+  assets/2020/10/time-recents-running-light.png
+!@ end_generate
 
-{% include photos.html
-  height="47" id="is-my-timer-running-6"
-  img1="/assets/2020/10/time-recents-stopped-dark.png"
-  img2="/assets/2020/10/time-recents-running-dark.png"
-%}
+!@ generate_image assets/2020/10/time-recents-start-stop-dark.png
+  assets/2020/10/time-recents-stopped-dark.png
+  assets/2020/10/time-recents-running-dark.png
+!@ end_generate
+{% endcomment %}
+
+{% include photo.html img="/assets/2020/10/time-recents-start-stop-light.png" %}
+
+{% include photo.html img="/assets/2020/10/time-recents-start-stop-dark.png" %}
 
 The design language continues for recent entries. From this list a timer for any
 category can be started and a running timer can be stopped. Running timers jump
@@ -227,11 +241,14 @@ The current status is visible with **zero clicks**, and actions on the most used
 timers are a **single click**. This is a drastic reduction from the average of
 three clicks before.
 
-{% include photos.html
-  height="auto" id="is-my-timer-running-7"
-  img1="/assets/2020/10/time-categories-light.png"
-  img2="/assets/2020/10/time-categories-dark.png"
-%}
+{% comment %}
+!@ generate_image assets/2020/10/time-categories-light-dark.png
+  assets/2020/10/time-categories-light.png
+  assets/2020/10/time-categories-dark.png
+!@ end_generate
+{% endcomment %}
+
+{% include photo.html img="/assets/2020/10/time-categories-light-dark.png" %}
 
 Below _Metrics_ and _Recents_ you can find the complete category tree. This
 interface is optimized for starting/stopping timers with the assumption that
@@ -250,17 +267,21 @@ time within the app.
 
 This is what the complete interface looks like when I launch the app:
 
-{% include photos.html
-  height="auto" id="is-my-timer-running-8"
-  img1="/assets/2020/10/time-stopped-light.png"
-  img2="/assets/2020/10/time-running-light.png"
-%}
+{% comment %}
+!@ generate_image assets/2020/10/time-start-stop-light.png
+  assets/2020/10/time-stopped-light.png
+  assets/2020/10/time-running-light.png
+!@ end_generate
 
-{% include photos.html
-  height="auto" id="is-my-timer-running-9"
-  img1="/assets/2020/10/time-stopped-dark.png"
-  img2="/assets/2020/10/time-running-dark.png"
-%}
+!@ generate_image assets/2020/10/time-start-stop-dark.png
+  assets/2020/10/time-stopped-dark.png
+  assets/2020/10/time-running-dark.png
+!@ end_generate
+{% endcomment %}
+
+{% include photo.html img="/assets/2020/10/time-start-stop-light.png" %}
+
+{% include photo.html img="/assets/2020/10/time-start-stop-dark.png" %}
 
 ### Conclusion
 
