@@ -2,6 +2,7 @@
 import os
 import subprocess
 import re
+import shutil
 
 print("Scanning for image requests")
 
@@ -70,6 +71,12 @@ if image_gap is None:
 
 print('Generating images')
 
+try:
+  os.stat('temp')
+except:
+  os.mkdir('temp')
+temp_image_path = 'temp/image.out'
+
 for request in requests:
   images = requests[request]
   num_images = len(images)
@@ -87,6 +94,9 @@ for request in requests:
   if len(set(widths)) != 1 or len(set(heights)) != 1:
     print('Skipping {}. Inconsistent image size'.format(request))
 
+  destination_exists = os.path.exists(request)
+  destination = request if not destination_exists else temp_image_path
+
   gaps = len(images) - 1
   total_gap = image_gap * gaps
   displayed_image_size = (page_size - total_gap)/num_images
@@ -103,8 +113,17 @@ for request in requests:
   """.format(**{
     'source_images': ' '.join(images),
     'padding': str(padding),
-    'destination': request
+    'destination': destination
   })
 
   print('  Generating', request)
   subprocess.run(generate_command, shell=True, check=True)
+
+  if destination_exists:
+    print('  Comparing', request)
+    compare_command = "compare -metric AE {} {} null: 2>&1".format(temp_image_path, request)
+    try:
+      subprocess.run(compare_command, shell=True, check=True)
+    except Exception as e:
+      print('  Replacing', request)
+      shutil.copyfile(temp_image_path, request)
