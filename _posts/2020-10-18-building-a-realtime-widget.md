@@ -208,7 +208,7 @@ struct TextWrapper : View {
 }
 ```
 
-{% include photo.html img="/assets/2020/10/overlapping-time.png" %}
+{% include photo.html img="/assets/2020/10/overlapping-time.png" skip_div="true" %}
 
 This was **really good**. A clean solution that would be easy to maintain and
 straightforward to reason about.
