@@ -3,6 +3,7 @@ slug: time
 layout: project
 title: Time
 release: Aug 2018 - Present
+featured: true
 rel_sort: 110
 ---
 

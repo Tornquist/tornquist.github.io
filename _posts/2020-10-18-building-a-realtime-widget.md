@@ -24,11 +24,14 @@ I show the current time in `HH:MM:SS` format. When a timer is running everything
 lights up green and the timer counts up by the second. It's nice to hit the start
 button, see the UI light up, and then see the timer start to roll.
 
-{% include photos.html
-  height="auto" id="building-a-realtime-widget-1"
-  img1="/assets/2020/10/time-metrics-stopped-dark.png"
-  img2="/assets/2020/10/time-metrics-running-dark.png"
-%}
+{% comment %}
+!@ generate_image assets/2020/10/time-metrics-dark.png
+  assets/2020/10/time-metrics-stopped-dark.png
+  assets/2020/10/time-metrics-running-dark.png
+!@ end_generate
+{% endcomment %}
+
+{% include photo.html img="/assets/2020/10/time-metrics-dark.png" %}
 
 To maintain reasonable performance I'm caching almost all of the data shown on
 the home screen timer. All closed timers are cached with a final total and are binned
@@ -205,19 +208,22 @@ struct TextWrapper : View {
 }
 ```
 
-{% include photo.html img="/assets/2020/10/overlapping-time.png" %}
+{% include photo.html img="/assets/2020/10/overlapping-time.png" skip_div="true" %}
 
 This was **really good**. A clean solution that would be easy to maintain and
 straightforward to reason about.
 
 Popping over to Xcode I tested this same view within a widget and saw:
 
-{% include photos.html
-  height="auto" id="building-a-realtime-widget-2"
-  img1="/assets/2020/10/time-bad-frame.png"
-  img2="/assets/2020/10/time-bad-frame-live.png"
-  img3="/assets/2020/10/time-bad-frame-background.png"
-%}
+{% comment %}
+!@ generate_image assets/2020/10/time-bad-frame-examples.png
+  assets/2020/10/time-bad-frame.png
+  assets/2020/10/time-bad-frame-live.png
+  assets/2020/10/time-bad-frame-background.png
+!@ end_generate
+{% endcomment %}
+
+{% include photo.html img="/assets/2020/10/time-bad-frame-examples.png" %}
 
 Well _that's_ not right.
 
@@ -283,12 +289,15 @@ incorrectly for a very brief period of time. It doesn't happen every time, but
 it may happen if you're intentionally watching the values update on your home
 screen.
 
-{% include photos.html
-  height="auto" id="building-a-realtime-widget-3"
-  img1="/assets/2020/10/time-rollover-small-1.png"
-  img2="/assets/2020/10/time-rollover-small-2.png"
-  img3="/assets/2020/10/time-rollover-small-3.png"
-%}
+{% comment %}
+!@ generate_image assets/2020/10/time-rollover-examples.png
+  assets/2020/10/time-rollover-small-1.png
+  assets/2020/10/time-rollover-small-2.png
+  assets/2020/10/time-rollover-small-3.png
+!@ end_generate
+{% endcomment %}
+
+{% include photo.html img="/assets/2020/10/time-rollover-examples.png" %}
 
 That's a problem that I can live with. It resolves quickly, and in my main use
 case there is a very low chance that I'll be staring at my home screen during
@@ -297,11 +306,14 @@ the first 10 minutes of my work day.
 So there we go! An iOS 14 widget that tells me if my timers are running and upates
 every second.
 
-{% include photos.html
-  height="auto" id="building-a-realtime-widget-4"
-  img1="/assets/2020/10/time-homescreen-stopped.jpg"
-  img2="/assets/2020/10/time-homescreen-running.jpg"
-%}
+{% comment %}
+!@ generate_image assets/2020/10/time-homescreen.png
+  assets/2020/10/time-homescreen-stopped.png
+  assets/2020/10/time-homescreen-running.png
+!@ end_generate
+{% endcomment %}
+
+{% include photo.html img="/assets/2020/10/time-homescreen.png" %}
 
 I'm _very_ happy with how this solution all came together. It was a longer
 process than I expected, but it has been such a satisfying addition to my app.

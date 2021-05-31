@@ -28,3 +28,5 @@ collections:
   privacy:
     output: true
     permalink: /privacy/:title/
+
+exclude: [temp, scripts, .github]

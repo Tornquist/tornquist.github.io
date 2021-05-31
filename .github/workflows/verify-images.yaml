@@ -1,0 +1,12 @@
+name: Verify Images
+on: [push]
+jobs:
+  Verify-Generated-Images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: sudo apt install imagemagick
+      - run: make images
+      - name: Verify no image changes
+        run: git diff --exit-code

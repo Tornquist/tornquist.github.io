@@ -1,1 +1,7 @@
+{% if include.skip_div == "true" %}
 <img class="image" {% if include.alt %}alt="{{include.alt}}"{% endif %} src="{{ include.img }}">
+{% else %}
+<div>
+  <img class="image" {% if include.alt %}alt="{{include.alt}}"{% endif %} src="{{ include.img }}">
+</div>
+{% endif %}
