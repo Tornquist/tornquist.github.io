@@ -197,6 +197,14 @@ code::-webkit-scrollbar {
   object-fit: cover;
 }
 
+figure {
+  margin: 0px;
+}
+
+figcaption {
+  font-size: 0.8em;
+}
+
 /* Page specific -- blog archives */
 
 ul.archives{
