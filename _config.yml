@@ -19,7 +19,7 @@ highlighter: rouge
 # Site Variables
 home_title: Home
 
-copyright: Copyright &copy; Nathan Tornquist 2010-2021
+copyright: Copyright &copy; Nathan Tornquist 2010-2022
 
 collections:
   projects:
