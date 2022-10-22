@@ -2,12 +2,10 @@
 slug: time
 layout: project
 title: Time
-release: Aug 2018 - Present
+release: Aug 2018 - Oct 2022
 featured: true
 rel_sort: 110
 ---
-
-*Time* is my current project.
 
 I really enjoyed [analyzing my working hours in 2017][1], and I'm a
 big fan of the infographics that [Nicholas Felton][2] makes on his own life.
