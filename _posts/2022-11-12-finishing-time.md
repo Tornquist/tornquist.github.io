@@ -103,7 +103,7 @@ daily.
 
 It took me far longer than I expected, but when broken out, this is a whole
 series of tiny side projects and explorations. I'm content with the time spent
-on this (somewhere around 425 hours), but in the future will be far more careful
+on this (somewhere around 440 hours), but in the future will be far more careful
 with how I scope my side projects.
 
 They're supposed to be fun after all.
