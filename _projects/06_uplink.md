@@ -62,7 +62,7 @@ set out to fill.
 The promo video used for the original product launch is available below.
 
 <div class="video-container">
-<iframe class="video" src="https://www.youtube.com/embed/woP3u6Mk9Pg" frameborder="0" allowfullscreen></iframe>
+<iframe class="video" src="https://www.youtube.com/embed/9YVGEfqfo3A" frameborder="0" allowfullscreen></iframe>
 </div>
 
 [1]: https://twitter.com/MattTornquist
