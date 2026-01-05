@@ -5,71 +5,68 @@ date: 2025-01-04 12:00:00
 categories: programming
 ---
 
-Since 2019 I have been running a small set of APIs on Digital Ocean. This setup
-was from an original plan to publicly launch [Time][t]. I ultimately decided to
-keep the app for myself, and over the years spent $450+ on Digital Ocean hosting
-that could have run on my raspberry pi at home.
+## Overview
 
-When I found it difficult to perform basic OS updates for both hosts, I decided
-to redo the setup in a containerized way to reduce costs and maintenance.
+I've been running a set of APIs on Digital Ocean and a second set of smart home
+applications on a Raspberry Pi for the last 6 years or so. Originally I had
+planned to publicly launch [Time][t] and wanted to prepare for isolation, but
+I ended up deciding just keeping the application for my own use.
+
+After 6 years, both servers were out long term support on their base OSs and
+were due for an update. I took advantage of the opportunity to consoldiate and
+containerize everything with a focus on an easier to update and manage
+environment.
+
+My primary goal was to address difficulty with updates and ensure that I could
+easily keep both nodes up to date with all security updates. The Pi and droplet
+had bare metal installs. Each was relatively simple, but this made it more
+difficult to update the applications and base OS, and increased the likelihood
+of one update breaking another. Containers should make it easier to update the
+base hardware and specific applications in isolation.
 
 The final result is _very_ similar to what I started with. All the same apps are
 running (just in containers), the same networking is supported (with a UI vs
 nginx), and it continues to be stable. The main outcome and goal was met as and
-I've reduced my monthly costs (after spending more up front) and made it
-(slighly) easier to update over time.
+I've also reduced my reocurring monthly costs (after spending more up front).
 
-## Before and After
+## Application Overview
 
-I had been roughly running this configuration for years:
+In my original configuration, the Raspberry Pi ran all home-focuced software
+including [homebridge](https://homebridge.io/),
+[pi hole](https://pi-hole.net/), and a [vpn](https://www.wireguard.com/). The
+droplet ran an API for Time, for Uplink, and supporting the routing (nginx/pm2)
+and databases (mysql) for each.
 
-* (HOME) raspberry pi
-  * homebridge
-  * pi-hole
-  * vpn
-* (REMOTE) droplet
-  * nginx
-  * pm2 (production node host)
-    * Time API
-    * Uplink API
-  * MySQL
-    * Time DB
-    * Uplink DB
-  * Backup Scripts 
+When moving everything to containers, all for same infrastructure would be
+running, but nginx/pm2 were replaced with [traefik][tt]/[portainer][p] and I
+needed to ensure that I could properly containerize everything.
 
-Once everything was setup I had a running Pi5, [SSD][ssd] hat, [PoE][poe] hat
-and [nice][case] (although chunky) case for the entire setup.
+I had a handful of problems moving from bare metal installs. The homebridge
+container is designed for host networking, DNS settings made it a bit slow to
+migrate the PiHole install, and the VPN was the hardest of all. I ended up just
+running wg-easy (a version of wireguard already set up for a container install). 
 
-The setup effectively looks like the two lists above smooshed together, with the
-addition of portainer, traefik and docker (and a significant reduction of bare
-metal applications).
+* Bare metal
+  * docker
+  * backup scripts
+* Docker
+  * Infra management containers
+    * portainer -- container management gui
+    * traefik -- proxy/routing
+    * autoheal -- container restart
+  * Personal/Home containers
+    * homebridge -- smart home
+    * wg-easy -- vpn
+    * pihole -- ad blocker
+  * Time API containers
+    * time-api
+    * time-db
+  * Uplink API containers
+    * uplink-api
+    * uplink-db
 
-* (HOME) raspberry pi
-  * Bare metal
-    * docker
-    * backup scripts
-  * Docker
-    * Infra management containers
-      * portainer
-      * traefik
-      * autoheal
-    * Personal/Home containers
-      * homebridge
-      * wg-easy
-      * pihole
-    * Time API containers
-      * time-api
-      * time-db
-    * Uplink API containers
-      * uplink-api
-      * uplink-db
-
-Traefik replaces nginx, and is a proxy that can use either docker tags or config
-files to route traffic. The hope had been that a single new docker compose file
-would allow new domains to be registered and made available with routing.
-
-Portainer is just a gui on top of docker which makes it easier to manage the
-infra without having to ssh in.
+On the hardware side, I have a running Pi5, [SSD][ssd] hat, [PoE][poe] hat and
+unfortunantly chunky [case][case] for the entire setup.
 
 ## General Setup
 
@@ -529,7 +526,9 @@ While setting all of this up, the primary pain points I had were:
 
 
 [t]: {% link _projects/11_time.md %}
+[tt]: https://traefik.io/traefik
 [h]: {% link _posts/2023-02-08-homekit-everything.md %}
+[p]: https://www.portainer.io/
 [ssd]: https://shop.pimoroni.com/products/nvme-base?variant=41219587178579
 [poe]: https://www.waveshare.com/wiki/PoE_HAT_(F)
 [case]: https://makerworld.com/en/models/413567-raspberry-pi-5-poe-nvme-case-waveshare-pimoroni#profileId-315577
