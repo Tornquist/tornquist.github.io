@@ -13,7 +13,7 @@ planned to publicly launch [Time][t] and wanted to prepare for isolation, but
 I ended up deciding just keeping the application for my own use.
 
 After 6 years, both servers were out long term support on their base OSs and
-were due for an update. I took advantage of the opportunity to consoldiate and
+were due for an update. I took advantage of the opportunity to consolidate and
 containerize everything with a focus on an easier to update and manage
 environment.
 
@@ -29,9 +29,42 @@ running (just in containers), the same networking is supported (with a UI vs
 nginx), and it continues to be stable. The main outcome and goal was met as and
 I've also reduced my reocurring monthly costs (after spending more up front).
 
-## Application Overview
+## One Year Later
 
-In my original configuration, the Raspberry Pi ran all home-focuced software
+_Update January 5, 2026_ -- This stack has been running effectively as-configured
+for a year. The original goal was to ensure that everything could easily be kept
+up to date with security updates.
+
+A year in, it was trivial to update the hardward using `apt`, and to update
+the specific applications by pulling fresh docker images for each stack and
+updating. The specific update process worked as expected, but with [traefik][tt]
+using the docker API directly there is far less isolation than planned.
+
+I ended up updating both the host and all contiainers when it was time to update.
+When I'm past the long term support of this new raspberry pi it should be a bit
+easier to set up the next one, but at the end of the day it's still a completely
+new environment.
+
+---
+
+## Configuration Details
+
+Details on the full configuration can be found below. To replicate the setup
+you just need to set up a new raspberry pi (or equivalent server), set up the
+docker stacks and then configure the DNS settings.
+
+* [Application Overview](#application-overview) -- Summary of running
+  applications
+* [Bootstrapping](#bootstrapping) -- Base hardware setup
+* [Container Configuration](#container-configuration) -- Example docker compose
+  files
+* [Traefik](#traefik) -- Proxy routing
+* [Networking](#networking) -- Network configuration
+* [Backups](#backups) -- Backup and restore scripts
+
+### Application Overview
+
+In my original configuration, the Raspberry Pi ran all home-focused software
 including [homebridge](https://homebridge.io/),
 [pi hole](https://pi-hole.net/), and a [vpn](https://www.wireguard.com/). The
 droplet ran an API for Time, for Uplink, and supporting the routing (nginx/pm2)
@@ -45,6 +78,10 @@ I had a handful of problems moving from bare metal installs. The homebridge
 container is designed for host networking, DNS settings made it a bit slow to
 migrate the PiHole install, and the VPN was the hardest of all. I ended up just
 running wg-easy (a version of wireguard already set up for a container install). 
+
+This left me with the initial configuration below. The best way to think of my
+configuration is a straight route from the internet to a given application
+(based on hostname) with either the router, or portainer blocking along the way.
 
 * Bare metal
   * docker
@@ -66,9 +103,11 @@ running wg-easy (a version of wireguard already set up for a container install).
     * uplink-db
 
 On the hardware side, I have a running Pi5, [SSD][ssd] hat, [PoE][poe] hat and
-unfortunantly chunky [case][case] for the entire setup.
+an unfortunantly chunky [case][case] for the entire setup.
 
-## General Setup
+### Bootstrapping
+
+I followed the following steps to get everything set up:
 
 1. Setup the pi: Assemble, flash disk image, configure SSH, etc.
 1. Update everything
@@ -90,28 +129,28 @@ $ sudo reboot
 
 At this point you're ready for containers.
 
-## Containers
+### Container Configuration
 
 Docker compose is a tool to configure and link multiple docker containers
 together. Each compose file will correspond to one application.
 
-I ended up with a few main networks.
+I ended up with a few main networks primarily driven by the goal of isolating
+individual applications while ensuring that they all worked without too much
+trouble.
 
-* **Host**: homebridge and Glances (system monitoring)
+* **host**: homebridge and Glances (system monitoring)
 * **pihole**: pihole
 * **time**: time API, time DB, Traefik
 * **uplink**: uplink API, uplink DB, Traefik
 * **traefik**: traefik, vpn, speedtest tracker (general testing)
 
-The reason I attached the vpn and speedtest directly to the Traefik network
-was because it was easier than standing up two more and adding them to the
-traefik compose file. This traefik network is effectively the default network.
+In this model, the traefik network acts as the default network, which is why
+the vpn and speedtest were attached directly. Traefik needs access to all
+networks for routing and references.
 
 <details>
 <summary>
-<b>traefik.yaml</b> -- This serves as the main networking/routing hub for the entire
-setup. Traefik reads a config file (below) as well as docker tags (ex: time) to
-construct the routing and renew ssl certs with letsencrypt.
+<b>traefik.yaml</b> -- Proxy and routing
 </summary>
 <!-- language: lang-yaml -->
 <pre><code>
@@ -175,8 +214,7 @@ services:
 <p></p>
 <details>
 <summary>
-<b>homebridge.yaml</b> -- Homebridge is a tool to map smart devices into HomeKit. It's
-a critical piece of my smart home setup.
+<b>homebridge.yaml</b> -- Smart home
 </summary>
 <!-- language: lang-yaml -->
 <pre><code>
@@ -200,8 +238,7 @@ services:
 <p></p>
 <details>
 <summary>
-<b>pihole.yaml</b> -- PiHole is a whole-home VPN. This is the second foundational app
-from the original raspberry pi setup.
+<b>pihole.yaml</b> -- Ad blocker
 </summary>
 <!-- language: lang-yaml -->
 <pre><code>
@@ -234,9 +271,7 @@ services:
 <p></p>
 <details>
 <summary>
-<b>vpn.yaml</b> -- Whole home VPN for remote access. With my cell phone and laptop
-automatically connecting when away, all local domains are always available for
-my main devices.
+<b>vpn.yaml</b> -- VPN
 </summary>
 <!-- language: lang-yaml -->
 <pre><code>
@@ -279,8 +314,7 @@ services:
 <p></p>
 <details>
 <summary>
-<b>autoheal.yaml</b> -- Monitor and restart containers with the `restart` configuration.
-This replaces pm2 from the original digital ocean configuration.
+<b>autoheal.yaml</b> -- Container restarts
 </summary>
 <!-- language: lang-yaml -->
 <pre><code>
@@ -296,8 +330,7 @@ services:
 <p></p>
 <details>
 <summary>
-<b>time.yaml</b> -- Time API and DB. This is what enabled the migration from Digital
-Ocean to a single device.
+<b>time.yaml</b> -- Time API and DB (Uplink is roughly the same)
 </summary>
 <!-- language: lang-yaml -->
 <pre><code>
@@ -355,7 +388,7 @@ services:
 </code></pre>
 </details>
 
-## Traefik
+### Traefik
 
 On the Time/Uplink containers, I was able to use docker labels to config
 Traefik. The labels look like this:
@@ -375,12 +408,12 @@ role to put the proper DNS records in place to enable SSL cert generation.
 I have public DNS records for my public APIs, but everything behind the firewall
 is not listed online. I have a single A record for `*.local.nathantornquist.com`
 that refers to the pi's internal IP address `192.168.0.139`. For Traefik to
-generate SSL certs for these sites, I was required to use a config file instead.
+generate SSL certs for these sites, I was required to use a config file instead
+as docker tags did not work.
 
-Docker tags do not work.
-
-The file is below. This took a bit to sort out, but once it was in place I had
-proper SSL and routing for both my public records and internal records.
+The traefik configuration file is below. This took a bit to sort out, but once
+it was in place I had proper SSL and routing for both my public records and
+internal records.
 
 <details>
 <summary>taefik.yml</summary>
@@ -451,7 +484,7 @@ http:
 </code></pre>
 </details>
 
-## Networking
+### Networking
 
 * time.nathantornquist.com points to the server with my networking hardware
   and traefik acting as a firewall and proxy.
@@ -497,7 +530,7 @@ echo "Updated $ZONE/$NAME_TAG to $MY_IP"
 </code></pre>
 </details>
 
-## Backups
+### Backups
 
 The final piece of the puzzle is proper backups. To make sure that I didn't put
 myself at risk or lose my data if the device failed I have full backups that run
@@ -506,29 +539,47 @@ nightly and back up full docker data as well specific database files.
 I wanted to avoid having to coordinate file systems directories or formats so
 all docker volumes are isolated to their specific containers. To back them up, I
 mount the volumes and dump them individually instead of changing/copying the
-files from the root file system.
+files from the root file system. I mount the volumns with docker [vackup][v].
 
-## Pain Points
+<details>
+<summary>backup_volumes.sh</summary>
+<!-- language: lang-bash -->
+<pre><code>
 
-While setting all of this up, the primary pain points I had were:
+# Example Container
+vackup export [volume] ~/Backups/data/$(date +%F)_[filename].tar.gz
+aws s3 cp ~/Backups/data/$(date +%F)_[filename].tar.gz s3://[bucket]/$(date +%F)_[filename].tar.gz --sse AES256
 
-1. **SSD migration**: Normally I install everything on a sd card and the mirror
-   that to a USB drive for long term hosting. I tried to do the same with the
-   ssd, but had significantly more trouble given the device ID naming baked into
-   the ssd.
-2. **Routing**: Each docker image/application had particular sensitivities for
-   how networking could be configured. I ended up with a mix of host networking
-   and proper isolated networking so that the home automation services all
-   continued to function.
-3. **VPN Functionality:** It was very hard for me to get a working VPN with
-   proper loopback and access to the other docker applications and devices on my
-   home network. The majority of my iteration was done here.
+# Example Database
+mysqldump -u [user] -P 3308 --no-tablespaces [database] > ~/Backups/data/$(date +%F)_[filename].sql
+aws s3 cp ~/Backups/data/$(date +%F)_[filename].sql s3://[bucket]/$(date +%F)_[filename].sql --sse AES256
 
+# Backup Sync Scripts
+aws s3 cp ~/Backups/backup_volumes.sh s3://[bucket]/$(date +%F)_backup_volumes.sh --sse AES256
+aws s3 cp ~/Backups/restore_volumes.sh s3://[bucket]/$(date +%F)_restore_volumes.sh --sse AES256
+aws s3 cp ~/Scripts/update-dns.sh s3://[bucket]/$(date +%F)_update_dns.sh --sse AES256
+
+# Clean up old local backups
+find ~/Backups/data/ -type f -mtime +8 -exec rm --interactive=never {} +
+</code></pre>
+</details>
+
+<details>
+<summary>restore_volumes.sh</summary>
+<!-- language: lang-bash -->
+<pre><code>
+read -p "Enter restore date: " date
+
+# Example Container
+vackup import data/${date}_[filename]_data.tar.gz [volume]
+</code></pre>
+</details>
 
 [t]: {% link _projects/11_time.md %}
 [tt]: https://traefik.io/traefik
 [h]: {% link _posts/2023-02-08-homekit-everything.md %}
 [p]: https://www.portainer.io/
+[v]: https://github.com/BretFisher/docker-vackup?tab=readme-ov-file
 [ssd]: https://shop.pimoroni.com/products/nvme-base?variant=41219587178579
 [poe]: https://www.waveshare.com/wiki/PoE_HAT_(F)
 [case]: https://makerworld.com/en/models/413567-raspberry-pi-5-poe-nvme-case-waveshare-pimoroni#profileId-315577
